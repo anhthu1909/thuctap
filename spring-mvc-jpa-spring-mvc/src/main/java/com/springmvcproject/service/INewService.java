@@ -1,9 +1,11 @@
 package com.springmvcproject.service;
 
+import com.springmvcproject.dto.NewDTO;
+import org.springframework.data.domain.Pageable;
+
 import java.util.List;
 
-import com.springmvcproject.model.NewModel;
-
 public interface INewService {
-	List<NewModel> findAll();
+    List<NewDTO> findAll(Pageable pageable);
+    int getTotalItem();
 }

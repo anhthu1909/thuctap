@@ -18,6 +18,6 @@ public class NewAPI {
 
     @DeleteMapping("/api/new")
     public void deleteNew(@RequestBody Long[] ids){
-        System.out.print("ok");
+
     }
 }
