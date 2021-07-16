@@ -42,7 +42,9 @@ public class HospitalEntity {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    private UserEntity users;
+    private UserEntity user;
+
+    public Long getId() { return id; }
 
     public String getName() {
         return name;
@@ -76,11 +78,11 @@ public class HospitalEntity {
         return modifiedBy;
     }
 
-    public UserEntity getUsers() {
-        return users;
+    public UserEntity getUser() {
+        return user;
     }
 
-    public void setUsers(UserEntity users) {
-        this.users = users;
+    public void setUsers(UserEntity user) {
+        this.user = user;
     }
 }

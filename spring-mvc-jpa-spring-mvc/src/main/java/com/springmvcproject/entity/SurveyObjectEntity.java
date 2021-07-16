@@ -41,8 +41,10 @@ public class SurveyObjectEntity {
     @LastModifiedBy
     private String modifiedBy;
 
-    @OneToMany(mappedBy = "surveyobjects")
+    @OneToMany(mappedBy = "surveyobject")
     private List<SurveyFormEntity> surveyforms = new ArrayList<>();
+
+    public Long getId() { return id; }
 
     public String getName() {
         return name;

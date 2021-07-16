@@ -42,8 +42,10 @@ public class CategoryEntity{
     @LastModifiedBy
     private String modifiedBy;
 
-    @OneToMany(mappedBy = "categories")
+    @OneToMany(mappedBy = "category")
     private List<NewEntity> news = new ArrayList<>();
+
+    public Long getId() { return id; }
 
     public String getName() {
         return name;

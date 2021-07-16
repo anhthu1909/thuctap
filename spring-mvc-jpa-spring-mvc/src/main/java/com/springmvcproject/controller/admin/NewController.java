@@ -1,6 +1,8 @@
 package com.springmvcproject.controller.admin;
 
+import com.springmvcproject.converter.NewConverter;
 import com.springmvcproject.dto.NewDTO;
+import com.springmvcproject.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,6 +22,9 @@ public class NewController {
 	@Autowired
 	private INewService newService;
 
+	@Autowired
+	private ICategoryService categoryService;
+
 	@RequestMapping(value = "/quan-tri/bai-viet/danh-sach", method = RequestMethod.GET)
 	public ModelAndView showList(@RequestParam("page") int page, @RequestParam("limit") int limit){
 		NewDTO model = new NewDTO();
@@ -35,8 +40,14 @@ public class NewController {
 	}
 	
 	@RequestMapping(value = "/quan-tri/bai-viet/chinh-sua", method = RequestMethod.GET)
-	public ModelAndView editNew() {
+	public ModelAndView editNew(@RequestParam(value = "id", required = false) Long id) {
 		ModelAndView mav = new ModelAndView("admin/new/edit");
+		NewDTO model=new NewDTO();
+		if(id != null){
+			model = newService.findById(id);
+		}
+		mav.addObject("categories", categoryService.findAll());
+		mav.addObject("model", model);
 		return mav;
 	}
 }

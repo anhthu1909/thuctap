@@ -42,8 +42,10 @@ public class RoleEntity {
 	@LastModifiedBy
 	private String modifiedBy;
 
-	@OneToMany(mappedBy = "roles")
+	@OneToMany(mappedBy = "role")
 	private List<UserRoleEntity> roles = new ArrayList<>();
+
+	public Long getId() { return id; }
 
 	public String getName() {
 		return name;

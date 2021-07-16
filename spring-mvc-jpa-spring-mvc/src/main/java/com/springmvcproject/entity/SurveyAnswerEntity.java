@@ -38,12 +38,12 @@ public class SurveyAnswerEntity {
     private String modifiedBy;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userid")
-    private UserEntity users;
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "surveyformid")
-    private SurveyFormEntity surveyforms;
+    @JoinColumn(name = "surveyform_id")
+    private SurveyFormEntity surveyform;
 
     public Long getId() {
         return id;
@@ -74,19 +74,19 @@ public class SurveyAnswerEntity {
     }
 
     public UserEntity getUsers() {
-        return users;
+        return user;
     }
 
-    public void setUsers(UserEntity users) {
-        this.users = users;
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 
-    public SurveyFormEntity getSurveyforms() {
-        return surveyforms;
+    public SurveyFormEntity getSurveyform() {
+        return surveyform;
     }
 
-    public void setSurveyforms(SurveyFormEntity surveyforms) {
-        this.surveyforms = surveyforms;
+    public void setSurveyform(SurveyFormEntity surveyform) {
+        this.surveyform = surveyform;
     }
 
 }

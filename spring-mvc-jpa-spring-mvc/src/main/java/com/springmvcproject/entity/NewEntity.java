@@ -9,8 +9,9 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "news")
+@Table(name = "new")
 public class NewEntity {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_Sequence")
@@ -46,8 +47,10 @@ public class NewEntity {
     private String modifiedBy;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categoryid")
-    private CategoryEntity categories;
+    @JoinColumn(name = "category_id")
+    private CategoryEntity category;
+
+    public Long getId() { return id; }
 
     public String getTitle() {
         return title;
@@ -97,11 +100,11 @@ public class NewEntity {
         return modifiedBy;
     }
 
-    public CategoryEntity getCategories() {
-        return categories;
+    public CategoryEntity getCategory() {
+        return category;
     }
 
-    public void setCategories(CategoryEntity categories) {
-        this.categories = categories;
+    public void setCategories(CategoryEntity category) {
+        this.category = category;
     }
 }

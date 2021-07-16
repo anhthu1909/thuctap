@@ -38,12 +38,12 @@ public class UserRoleEntity{
     private String modifiedBy;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userid")
-    private UserEntity users;
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "roleid")
-    private RoleEntity roles;
+    @JoinColumn(name = "role_id")
+    private RoleEntity role;
 
     public Long getId() {
         return id;
@@ -74,18 +74,18 @@ public class UserRoleEntity{
     }
 
     public UserEntity getUsers() {
-        return users;
+        return user;
     }
 
-    public void setUsers(UserEntity users) {
-        this.users = users;
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 
-    public RoleEntity getRoles() {
-        return roles;
+    public RoleEntity getRole() {
+        return role;
     }
 
-    public void setRoles(RoleEntity roles) {
-        this.roles = roles;
+    public void setRole(RoleEntity role) {
+        this.role = role;
     }
 }

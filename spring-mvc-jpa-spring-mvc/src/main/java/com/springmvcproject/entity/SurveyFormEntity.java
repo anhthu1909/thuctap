@@ -43,14 +43,16 @@ public class SurveyFormEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "surveytype_id")
-    private SurveyTypeEntity surveytypes;
+    private SurveyTypeEntity surveytype;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "surveyobject_id")
-    private SurveyObjectEntity surveyobjects;
+    private SurveyObjectEntity surveyobject;
 
-    @OneToMany(mappedBy = "surveyforms")
+    @OneToMany(mappedBy = "surveyform")
     private List<SurveyAnswerEntity> surveyforms = new ArrayList<>();
+
+    public Long getId() { return id; }
 
     public String getName() {
         return name;
@@ -85,20 +87,20 @@ public class SurveyFormEntity {
     }
 
     public SurveyTypeEntity getSurveytype() {
-        return surveytypes;
+        return surveytype;
     }
 
     public void setSurveytype(SurveyTypeEntity surveytype) {
-        this.surveytypes = surveytype;
+        this.surveytype = surveytype;
     }
 
     public SurveyObjectEntity getSurveyobject() {
-        return surveyobjects;
+        return surveyobject;
     }
 
     public void setSurveyobject(SurveyObjectEntity surveyobject) {
 
-        this.surveyobjects = surveyobject;
+        this.surveyobject = surveyobject;
     }
 
     public List<SurveyAnswerEntity> getSurveyforms() {

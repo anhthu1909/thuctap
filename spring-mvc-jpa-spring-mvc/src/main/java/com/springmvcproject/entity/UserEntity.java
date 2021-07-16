@@ -48,14 +48,16 @@ public class UserEntity {
     @LastModifiedBy
     private String modifiedBy;
 
-    @OneToOne(mappedBy = "users")
-    private HospitalEntity hospitals;
+    @OneToOne(mappedBy = "user")
+    private HospitalEntity hospital;
 
-    @OneToMany(mappedBy = "users")
-    private List<UserRoleEntity> userrole = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<UserRoleEntity> userroles = new ArrayList<>();
 
-    @OneToMany(mappedBy = "users")
-    private List<SurveyAnswerEntity> useranswer = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<SurveyAnswerEntity> useranswers = new ArrayList<>();
+
+    public Long getId() { return id; }
 
     public String getUserName() {
         return userName;
@@ -106,18 +108,18 @@ public class UserEntity {
     }
 
     public List<UserRoleEntity> getUserrole() {
-        return userrole;
+        return userroles;
     }
 
     public void setUserrole(List<UserRoleEntity> userrole) {
-        this.userrole = userrole;
+        this.userroles = userroles;
     }
 
     public List<SurveyAnswerEntity> getUseranswer() {
-        return useranswer;
+        return useranswers;
     }
 
     public void setUseranswer(List<SurveyAnswerEntity> useranswer) {
-        this.useranswer = useranswer;
+        this.useranswers = useranswers;
     }
 }

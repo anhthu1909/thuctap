@@ -3,14 +3,14 @@
     <persistence-unit name="persistence-data">
         <class>com.springmvcproject.entity.NewEntity</class>
         <class>com.springmvcproject.entity.CategoryEntity</class>
-<!--        <class>com.springmvcproject.entity.HospitalEntity</class>-->
-<!--        <class>com.springmvcproject.entity.UserEntity</class>-->
-<!--        <class>com.springmvcproject.entity.UserRoleEntity</class>-->
-<!--        <class>com.springmvcproject.entity.RoleEntity</class>-->
-<!--        <class>com.springmvcproject.entity.SurveyTypeEntity</class>-->
-<!--        <class>com.springmvcproject.entity.SurveyObjectEntity</class>-->
-<!--        <class>com.springmvcproject.entity.SurveyFormEntity</class>-->
-<!--        <class>com.springmvcproject.entity.SurveyAnswerEntity</class>-->
+        <class>com.springmvcproject.entity.HospitalEntity</class>
+        <class>com.springmvcproject.entity.UserEntity</class>
+        <class>com.springmvcproject.entity.UserRoleEntity</class>
+        <class>com.springmvcproject.entity.RoleEntity</class>
+        <class>com.springmvcproject.entity.SurveyTypeEntity</class>
+        <class>com.springmvcproject.entity.SurveyObjectEntity</class>
+        <class>com.springmvcproject.entity.SurveyFormEntity</class>
+        <class>com.springmvcproject.entity.SurveyAnswerEntity</class>
     </persistence-unit>
 </persistence>
 

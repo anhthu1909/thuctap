@@ -1,5 +1,6 @@
 package com.springmvcproject.service.impl;
 
+import com.springmvcproject.converter.CategoryConverter;
 import com.springmvcproject.entity.CategoryEntity;
 import com.springmvcproject.repository.CategoryRepository;
 import com.springmvcproject.service.ICategoryService;
@@ -15,7 +16,10 @@ public class CategoryService implements ICategoryService {
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
-	
+
+	@Autowired
+	private CategoryConverter categoryConverter;
+
 	@Override
 	public Map<String, String> findAll() {
 		Map<String, String> result = new HashMap<>();

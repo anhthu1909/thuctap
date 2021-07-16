@@ -30,22 +30,21 @@
         <div class="page-content">
             <div class="row">
                 <div class="col-xs-12">
-                    <form class="form-horizontal" role="form" id="formSubmit">
+                    <form:form class="form-horizontal" role="form" id="formSubmit" modelAttribute="model">
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="categoryCode"> Thể loại bài viết </label>
                             <div class="col-sm-9">
-                            <select class="col-xs-10 col-sm-5" id="categoryCode" name="categoryCode">
-                                <option>Thể thao</option>
-                                <option>Xã hội</option>
-                                <option>Chính trị</option>
-                            </select>
+                            <form:select path="categoryCode" id="categoryCode">
+                                <form:option value="" label="--Chọn thể loại--"/>
+                                <form:options items="${categories}"/>
+                            </form:select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="title"> Tiêu đề bài
                                 viết </label>
                             <div class="col-sm-9">
-                                <input type="text" class="col-xs-10 col-sm-5" id="title" name="title"/>
+                                <form:input path="title" cssClass="col-xs-10 col-sm-5"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -58,20 +57,26 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="shortDescription"> Mô tả ngắn </label>
                             <div class="col-sm-9">
-                            <textarea class="col-xs-10 col-sm-5" rows="5" cols="10" id="shortDescription" name="shortDescription"></textarea>
+                                <form:textarea path="shortDescription" rows="5" cols="10" cssClass="col-xs-10 col-sm-5" id="shortDescription"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="content"> Nội dung </label>
                             <div class="col-sm-9">
-                            <textarea class="col-xs-10 col-sm-5" rows="5" cols="10" id="content" name="content"></textarea>
+                                <form:textarea path="content" rows="5" cols="10" cssClass="col-xs-10 col-sm-5" id="content"/>
                             </div>
                         </div>
                         <div class="clearfix form-actions">
                             <div class="col-md-offset-3 col-md-9">
+                                <c:if test="${not empty model.id}">
+                                    <button class="btn btn-info" type="button" id="btnAddOrUpdateNew">
+                                        <i class="ace-icon fa fa-check bigger-110"></i>
+                                        Cập nhật bài viết
+                                    </button>
+                                </c:if>
                                 <button class="btn btn-info" type="button" id="btnAddOrUpdateNew">
                                     <i class="ace-icon fa fa-check bigger-110"></i>
-                                    Lưu
+                                    Thêm bài viết
                                 </button>
 
                                 &nbsp; &nbsp; &nbsp;
@@ -81,7 +86,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form:form>
                 </div>
             </div>
         </div>
@@ -92,15 +97,16 @@
         e.preventDefault();
         var data = {};
         var formData = $('#formSubmit').serializeArray();
-        $.each(formData, function (i, v) {
-            data[""+v.name+""] = v.value;
-        });
-        var id = $('#newId').val();
-        if (id == "") {
-            addNew(data);
-        } else {
-            updateNew(data);
-        }
+        console.log(formData);
+        // $.each(formData, function (i, v) {
+        //     data[""+v.name+""] = v.value;
+        // });
+        // var id = $('#newId').val();
+        // if (id == "") {
+        //     addNew(data);
+        // } else {
+        //     updateNew(data);
+        // }
     });
 </script>
 </body>
