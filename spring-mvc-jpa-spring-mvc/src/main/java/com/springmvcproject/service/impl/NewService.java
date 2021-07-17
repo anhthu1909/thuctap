@@ -1,5 +1,13 @@
 package com.springmvcproject.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.springmvcproject.converter.NewConverter;
 import com.springmvcproject.dto.NewDTO;
 import com.springmvcproject.entity.CategoryEntity;
@@ -7,13 +15,6 @@ import com.springmvcproject.entity.NewEntity;
 import com.springmvcproject.repository.CategoryRepository;
 import com.springmvcproject.repository.NewRepository;
 import com.springmvcproject.service.INewService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class NewService implements INewService {
@@ -31,7 +32,7 @@ public class NewService implements INewService {
     public List<NewDTO> findAll(Pageable pageable) {
         List<NewDTO> models = new ArrayList<>();
         List<NewEntity> entities = newRepository.findAll(pageable).getContent();
-        for (NewEntity item : entities) {
+        for (NewEntity item: entities) {
             NewDTO newDTO = newConverter.toDto(item);
             models.add(newDTO);
         }
@@ -63,5 +64,13 @@ public class NewService implements INewService {
             newEntity.setCategory(category);
         }
         return newConverter.toDto(newRepository.save(newEntity));
+    }
+
+    @Override
+    @Transactional
+    public void delete(long[] ids) {
+        for (long id: ids) {
+            newRepository.delete(id);
+        }
     }
 }

@@ -59,6 +59,13 @@
             <version>${springframework.version}</version>
         </dependency>
 
+        <!-- spring aspects -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
         <!-- spring security -->
         <dependency>
             <groupId>org.springframework.security</groupId>
