@@ -104,7 +104,7 @@ public class NewEntity {
         return category;
     }
 
-    public void setCategories(CategoryEntity category) {
+    public void setCategory(CategoryEntity category) {
         this.category = category;
     }
 }
