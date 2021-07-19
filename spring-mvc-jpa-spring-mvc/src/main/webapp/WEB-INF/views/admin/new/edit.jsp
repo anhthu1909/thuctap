@@ -111,7 +111,6 @@
         } else {
             updateNew(data);
         }
-        console.log(formData);
     });
 
     function addNew(data) {

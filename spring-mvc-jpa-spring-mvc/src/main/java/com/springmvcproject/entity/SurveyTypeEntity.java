@@ -9,7 +9,7 @@ import java.util.List;
 public class SurveyTypeEntity {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "surveytype-gen")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "surveytype_gen")
     @SequenceGenerator(name = "surveytype_gen", sequenceName = "surveytype_seq", allocationSize = 1)
     private Long id;
 
@@ -34,10 +34,6 @@ public class SurveyTypeEntity {
 
     public String getCode() {
         return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public List<SurveyFormEntity> getSurveyforms() {

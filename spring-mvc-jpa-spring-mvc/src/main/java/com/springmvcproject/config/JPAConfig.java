@@ -48,8 +48,8 @@ public class JPAConfig {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:ORCL");
-		dataSource.setUsername("C##ANHTHU");
-		dataSource.setPassword("anhthukute");
+		dataSource.setUsername("SYSTEM");
+		dataSource.setPassword("Anhthu135@");
 		return dataSource;
 	}
 	
