@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "role")
-public class RoleEntity {
+public class RoleEntity extends BaseEntity{
 
 	@Id
 	@Column(name = "id")
@@ -20,31 +20,25 @@ public class RoleEntity {
 	@Column(name = "code")
 	private String code;
 
-	@OneToMany(mappedBy = "role")
+	@OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
 	private List<UserRoleEntity> roles = new ArrayList<>();
 
 	public Long getId() { return id; }
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public String getCode() {
 		return code;
 	}
-
 	public void setCode(String code) {
 		this.code = code;
 	}
-
 	public List<UserRoleEntity> getRoles() {
 		return roles;
 	}
-
 	public void setRoles(List<UserRoleEntity> roles) {
 		this.roles = roles;
 	}

@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class UserEntity {
+public class UserEntity extends BaseEntity{
 
     @Id
     @Column(name = "id")
@@ -26,62 +26,42 @@ public class UserEntity {
     @Column(name = "status")
     private Integer status;
 
-    @OneToOne(mappedBy = "user")
-    private HospitalEntity hospital;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private EmployeeEntity employee;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<UserRoleEntity> userroles = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user")
-    private List<SurveyAnswerEntity> useranswers = new ArrayList<>();
-
     public Long getId() { return id; }
-
     public String getUserName() {
         return userName;
     }
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
-
     public String getFullName() {
         return fullName;
     }
-
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-
     public Integer getStatus() {
         return status;
     }
-
     public void setStatus(Integer status) {
         this.status = status;
     }
-
     public List<UserRoleEntity> getUserrole() {
         return userroles;
     }
-
     public void setUserrole(List<UserRoleEntity> userrole) {
         this.userroles = userroles;
-    }
-
-    public List<SurveyAnswerEntity> getUseranswer() {
-        return useranswers;
-    }
-
-    public void setUseranswer(List<SurveyAnswerEntity> useranswer) {
-        this.useranswers = useranswers;
     }
 }

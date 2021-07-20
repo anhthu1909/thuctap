@@ -1,10 +1,12 @@
 package com.springmvcproject.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user_role")
-public class UserRoleEntity {
+public class UserRoleEntity extends BaseEntity{
 
     @Id
     @Column(name = "id")
@@ -23,31 +25,34 @@ public class UserRoleEntity {
     @JoinColumn(name = "role_id")
     private RoleEntity role;
 
+    @OneToMany(mappedBy = "userrole", cascade = CascadeType.ALL)
+    private List<SurveyAnswerEntity> useranswers = new ArrayList<>();
+
     public Long getId() {
         return id;
     }
-
     public String getCode() {
         return code;
     }
-
     public void setCode(String code) {
         this.code = code;
     }
-
     public UserEntity getUsers() {
         return user;
     }
-
     public void setUser(UserEntity user) {
         this.user = user;
     }
-
     public RoleEntity getRole() {
         return role;
     }
-
     public void setRole(RoleEntity role) {
         this.role = role;
+    }
+    public List<SurveyAnswerEntity> getUseranswer() {
+        return useranswers;
+    }
+    public void setUseranswer(List<SurveyAnswerEntity> useranswer) {
+        this.useranswers = useranswers;
     }
 }

@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "surveyanswer")
-public class SurveyAnswerEntity {
+public class SurveyAnswerEntity extends BaseEntity{
 
     @Id
     @Column(name = "id")
@@ -16,8 +16,8 @@ public class SurveyAnswerEntity {
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
+    @JoinColumn(name = "user_role_id")
+    private UserRoleEntity userrole;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "surveyform_id")
@@ -26,29 +26,18 @@ public class SurveyAnswerEntity {
     public Long getId() {
         return id;
     }
-
     public String getContent() {
         return content;
     }
-
     public void setContent(String content) {
         this.content = content;
     }
-
-    public UserEntity getUsers() {
-        return user;
-    }
-
-    public void setUser(UserEntity user) {
-        this.user = user;
-    }
-
+    public UserRoleEntity getUserrole() { return userrole; }
+    public void setUserrole(UserRoleEntity userrole) { this.userrole = userrole; }
     public SurveyFormEntity getSurveyform() {
         return surveyform;
     }
-
     public void setSurveyform(SurveyFormEntity surveyform) {
         this.surveyform = surveyform;
     }
-
 }

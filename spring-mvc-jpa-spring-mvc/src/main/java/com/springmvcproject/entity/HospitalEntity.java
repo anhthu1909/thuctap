@@ -1,10 +1,12 @@
 package com.springmvcproject.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "hospital")
-public class HospitalEntity {
+public class HospitalEntity extends BaseEntity{
 
     @Id
     @Column(name = "id")
@@ -18,33 +20,26 @@ public class HospitalEntity {
     @Column(name = "code")
     private String code;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
+    @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
+    private List<EmployeeEntity> employees = new ArrayList<>();
 
     public Long getId() { return id; }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getCode() {
         return code;
     }
-
     public void setCode(String code) {
         this.code = code;
     }
-
-    public UserEntity getUser() {
-        return user;
+    public List<EmployeeEntity> getEmployees() {
+        return employees;
     }
-
-    public void setUsers(UserEntity user) {
-        this.user = user;
+    public void setEmployees(List<EmployeeEntity> employees) {
+        this.employees = employees;
     }
 }

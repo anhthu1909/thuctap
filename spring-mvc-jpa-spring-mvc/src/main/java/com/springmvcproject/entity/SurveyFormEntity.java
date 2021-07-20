@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "surveyform")
-public class SurveyFormEntity {
+public class SurveyFormEntity extends BaseEntity{
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "surveyform_gen")
@@ -27,48 +27,35 @@ public class SurveyFormEntity {
     @JoinColumn(name = "surveyobject_id")
     private SurveyObjectEntity surveyobject;
 
-    @OneToMany(mappedBy = "surveyform")
+    @OneToMany(mappedBy = "surveyform", cascade = CascadeType.ALL)
     private List<SurveyAnswerEntity> surveyforms = new ArrayList<>();
 
     public Long getId() { return id; }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getCode() {
         return code;
     }
-
     public void setCode(String code) {
         this.code = code;
     }
-
     public SurveyTypeEntity getSurveytype() {
         return surveytype;
     }
-
     public void setSurveytype(SurveyTypeEntity surveytype) {
         this.surveytype = surveytype;
     }
-
     public SurveyObjectEntity getSurveyobject() {
         return surveyobject;
     }
-
-    public void setSurveyobject(SurveyObjectEntity surveyobject) {
-
-        this.surveyobject = surveyobject;
-    }
-
+    public void setSurveyobject(SurveyObjectEntity surveyobject) { this.surveyobject = surveyobject; }
     public List<SurveyAnswerEntity> getSurveyforms() {
         return surveyforms;
     }
-
     public void setSurveyforms(List<SurveyAnswerEntity> surveyforms) {
         this.surveyforms = surveyforms;
     }

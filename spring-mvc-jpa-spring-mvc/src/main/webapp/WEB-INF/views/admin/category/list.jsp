@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp" %>
-<c:url var="newAPI" value="/api/new"/>
-<c:url var="newURL" value="/quan-tri/bai-viet/danh-sach"/>
+<c:url var="categoryAPI" value="/api/category"/>
+<c:url var="categoryURL" value="/quan-tri/loai-bai-viet/danh-sach"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Danh sách bài viết</title>
+    <title>Danh sách loại bài viết</title>
 </head>
 
 <body>
     <div class="main-content">
-        <form action="<c:url value='/quan-tri/bai-viet/danh-sach'/>" id="formSubmit" method="get">
+        <form action="<c:url value='/quan-tri/loai-bai-viet/danh-sach'/>" id="formSubmit" method="get">
 
             <div class="main-content-inner">
                 <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -36,11 +36,11 @@
                                 <div class="table-btn-controls">
                                     <div class="pull-right tableTools-container">
                                         <div class="dt-buttons btn-overlap btn-group">
-                                            <c:url var="createNewURl" value="/quan-tri/bai-viet/chinh-sua" />
+                                            <c:url var="createCategoryURl" value="/quan-tri/loai-bai-viet/chinh-sua" />
                                             <a flag="info"
                                                class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
                                                data-toggle="tooltip"
-                                               title='Thêm bài viết' href='${createNewURl}'>
+                                               title='Thêm loại bài viết' href='${createCategoryURl}'>
                                                 <span>
                                                     <i class="fa fa-plus-circle bigger-110 purple"></i>
                                                 </span>
@@ -58,36 +58,34 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="table-responsive">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                <tr>
-                                                    <th><input type="checkbox" id="checkAll"></th>
-                                                    <th>Tên bài viết</th>
-                                                    <th>Loại bài viết</th>
-                                                    <th>Mô tả ngắn</th>
-                                                    <th>Thao tác</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <c:forEach var="item" items="${model.listResult}">
-                                                        <tr>
-                                                            <td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>
-                                                            <td>${item.title}</td>
-                                                            <td>${item.categoryName}</td>
-                                                            <td>${item.shortDescription}</td>
-                                                            <td>
-                                                                <c:url var="updateNewURL" value="/quan-tri/bai-viet/chinh-sua" >
-                                                                    <c:param name="id" value="${item.id}"/>
-                                                                </c:url>
-                                                                <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
-                                                                   title="Cập nhật bài viết" href='${updateNewURL}'><i
-                                                                    class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    </c:forEach>
-                                                </tbody>
-                                            </table>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th><input type="checkbox" id="checkAll"></th>
+                                                <th>Tên loại bài viết</th>
+                                                <th>Mã loại bài viết</th>
+                                                <th>Thao tác</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                <c:forEach var="item" items="${model.listResult}">
+                                                    <tr>
+                                                        <td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>
+                                                        <td>${item.name}</td>
+                                                        <td>${item.code}</td>
+                                                        <td>
+                                                            <c:url var="updateCategoryURL" value="/quan-tri/loai-bai-viet/chinh-sua" >
+                                                                <c:param name="id" value="${item.id}"/>
+                                                            </c:url>
+                                                            <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
+                                                               title="Cập nhật loại bài viết" href='${updateCategoryURL}'><i
+                                                                class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
                                         <ul class="pagination" id="pagination"></ul>
                                         <input type="hidden" value="" id="page" name="page"/>
                                         <input type="hidden" value="" id="limit" name="limit"/>
@@ -143,15 +141,15 @@
 
         function deleteNew(data) {
             $.ajax({
-                url: '${newAPI}',
+                url: '${categoryAPI}',
                 type: 'DELETE',
                 contentType: 'application/json',
                 data: JSON.stringify(data),
                 success: function (result) {
-                    window.location.href = "${newURL}?page=1&limit=2&message=delete_success";
+                    window.location.href = "${categoryURL}?page=1&limit=2&message=delete_success";
                 },
                 error: function (error) {
-                    window.location.href = "${newURL}?page=1&limit=2&message=error_system";
+                    window.location.href = "${categoryURL}?page=1&limit=2&message=error_system";
                 }
             });
         }

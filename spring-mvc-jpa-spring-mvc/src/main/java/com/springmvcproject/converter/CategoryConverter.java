@@ -1,9 +1,8 @@
 package com.springmvcproject.converter;
 
-import org.springframework.stereotype.Component;
-
 import com.springmvcproject.dto.CategoryDTO;
 import com.springmvcproject.entity.CategoryEntity;
+import org.springframework.stereotype.Component;
 
 @Component
 public class CategoryConverter {
@@ -18,6 +17,12 @@ public class CategoryConverter {
 
 	public CategoryEntity toEntity(CategoryDTO dto) {
 		CategoryEntity result = new CategoryEntity();
+		result.setCode(dto.getCode());
+		result.setName(dto.getName());
+		return result;
+	}
+
+	public CategoryEntity toEntity(CategoryEntity result, CategoryDTO dto) {
 		result.setCode(dto.getCode());
 		result.setName(dto.getName());
 		return result;

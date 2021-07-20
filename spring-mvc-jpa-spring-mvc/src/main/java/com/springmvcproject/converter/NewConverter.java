@@ -16,6 +16,7 @@ public class NewConverter {
         result.setContent(entity.getContent());
         result.setThumbnail(entity.getThumbnail());
         result.setCategoryCode(entity.getCategory().getCode());
+        result.setCategoryName(entity.getCategory().getName());
         return result;
     }
 

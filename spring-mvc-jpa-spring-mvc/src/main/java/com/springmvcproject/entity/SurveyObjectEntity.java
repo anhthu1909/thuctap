@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "surveyobject")
-public class SurveyObjectEntity {
+public class SurveyObjectEntity extends BaseEntity{
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "surveyobject_gen")
@@ -19,27 +19,22 @@ public class SurveyObjectEntity {
     @Column(name = "code")
     private String code;
 
-    @OneToMany(mappedBy = "surveyobject")
+    @OneToMany(mappedBy = "surveyobject", cascade = CascadeType.ALL)
     private List<SurveyFormEntity> surveyforms = new ArrayList<>();
 
     public Long getId() { return id; }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getCode() {
         return code;
     }
-
     public List<SurveyFormEntity> getSurveyforms() {
         return surveyforms;
     }
-
     public void setSurveyforms(List<SurveyFormEntity> surveyforms) {
         this.surveyforms = surveyforms;
     }
