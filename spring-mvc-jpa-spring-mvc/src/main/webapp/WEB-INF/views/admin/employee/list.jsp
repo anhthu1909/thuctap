@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp" %>
-<c:url var="categoryAPI" value="/api/category"/>
-<c:url var="categoryURL" value="/quan-tri/loai-bai-viet/danh-sach"/>
+<c:url var="employeeAPI" value="/api/employee"/>
+<c:url var="employeeURL" value="/quan-tri/nhan-vien/danh-sach"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Danh sách loại bài viết</title>
+    <title>Danh sách nhân viên</title>
 </head>
 
 <body>
     <div class="main-content">
-        <form action="<c:url value='/quan-tri/loai-bai-viet/danh-sach'/>" id="formSubmit" method="get">
+        <form action="<c:url value='/quan-tri/nhan-vien/danh-sach'/>" id="formSubmit" method="get">
 
             <div class="main-content-inner">
                 <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -36,17 +36,17 @@
                                 <div class="table-btn-controls">
                                     <div class="pull-right tableTools-container">
                                         <div class="dt-buttons btn-overlap btn-group">
-                                            <c:url var="createCategoryURl" value="/quan-tri/loai-bai-viet/chinh-sua" />
+                                            <c:url var="createEmployeeURl" value="/quan-tri/nhan-vien/chinh-sua" />
                                             <a flag="info"
                                                class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
                                                data-toggle="tooltip"
-                                               title='Thêm loại bài viết' href='${createCategoryURl}'>
+                                               title='Thêm nhân viên' href='${createEmployeeURl}'>
                                                 <span>
                                                     <i class="fa fa-plus-circle bigger-110 purple"></i>
                                                 </span>
                                             </a>
                                             <button id="btnDelete" type="button" onclick="warningBeforeDelete()"
-                                                class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa loại bài viết'>
+                                                class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa nhân viên'>
                                                     <span>
                                                         <i class="fa fa-trash-o bigger-110 pink"></i>
                                                     </span>
@@ -58,34 +58,38 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                            <tr>
-                                                <th><input type="checkbox" id="checkAll"></th>
-                                                <th>Tên loại bài viết</th>
-                                                <th>Mã loại bài viết</th>
-                                                <th>Thao tác</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                                <c:forEach var="item" items="${model.listResult}">
-                                                    <tr>
-                                                        <td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>
-                                                        <td>${item.name}</td>
-                                                        <td>${item.code}</td>
-                                                        <td>
-                                                            <c:url var="updateCategoryURL" value="/quan-tri/loai-bai-viet/chinh-sua" >
-                                                                <c:param name="id" value="${item.id}"/>
-                                                            </c:url>
-                                                            <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
-                                                               title="Cập nhật loại bài viết" href='${updateCategoryURL}'><i
-                                                                class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </c:forEach>
-                                            </tbody>
-                                        </table>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" id="checkAll"></th>
+                                                    <th>Tên nhân viên</th>
+                                                    <th>Bệnh viện công tác</th>
+                                                    <th>Số điện thoại</th>
+                                                    <th>Ảnh đại diện</th>
+                                                    <th>Thao tác</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <c:forEach var="item" items="${model.listResult}">
+                                                        <tr>
+                                                            <td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>
+                                                            <td>${item.name}</td>
+                                                            <td>${item.hospitalName}</td>
+                                                            <td>${item.phone}</td>
+                                                            <td>${item.thumbnail}</td>
+                                                            <td>
+                                                                <c:url var="updateEmployeeURL" value="/quan-tri/nhan-vien/chinh-sua" >
+                                                                    <c:param name="id" value="${item.id}"/>
+                                                                </c:url>
+                                                                <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
+                                                                   title="Cập nhật nhân viên" href='${updateEmployeeURL}'><i
+                                                                    class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </c:forEach>
+                                                </tbody>
+                                            </table>
                                         <ul class="pagination" id="pagination"></ul>
                                         <input type="hidden" value="" id="page" name="page"/>
                                         <input type="hidden" value="" id="limit" name="limit"/>
@@ -134,22 +138,22 @@
                     var ids = $('tbody input[type=checkbox]:checked').map(function () {
                         return $(this).val();
                     }).get();
-                    deleteCategory(ids);
+                    deleteEmployee(ids);
                 }
             });
         }
 
-        function deleteCategory(data) {
+        function deleteEmployee(data) {
             $.ajax({
-                url: '${categoryAPI}',
+                url: '${employeeAPI}',
                 type: 'DELETE',
                 contentType: 'application/json',
                 data: JSON.stringify(data),
                 success: function (result) {
-                    window.location.href = "${categoryURL}?page=1&limit=2&message=delete_success";
+                    window.location.href = "${employeeURL}?page=1&limit=2&message=delete_success";
                 },
                 error: function (error) {
-                    window.location.href = "${categoryURL}?page=1&limit=2&message=error_system";
+                    window.location.href = "${employeeURL}?page=1&limit=2&message=error_system";
                 }
             });
         }

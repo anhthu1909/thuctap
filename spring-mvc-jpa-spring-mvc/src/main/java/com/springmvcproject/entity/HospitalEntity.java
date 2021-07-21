@@ -20,6 +20,9 @@ public class HospitalEntity extends BaseEntity{
     @Column(name = "code")
     private String code;
 
+    @Column(name = "phone")
+    private String phone;
+
     @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
     private List<EmployeeEntity> employees = new ArrayList<>();
 
@@ -36,6 +39,8 @@ public class HospitalEntity extends BaseEntity{
     public void setCode(String code) {
         this.code = code;
     }
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
     public List<EmployeeEntity> getEmployees() {
         return employees;
     }

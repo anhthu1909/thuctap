@@ -15,6 +15,9 @@ public class EmployeeEntity extends BaseEntity{
     @Column(name = "name")
     private String name;
 
+    @Column(name = "thumbnail")
+    private String thumbnail;
+
     @Column(name = "phone")
     private String phone;
 
@@ -22,7 +25,7 @@ public class EmployeeEntity extends BaseEntity{
     @JoinColumn(name = "hospital_id")
     private HospitalEntity hospital;
 
-    @OneToOne(mappedBy = "employee")
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
     private UserEntity users;
 
     public Long getId() { return id; }
@@ -31,6 +34,12 @@ public class EmployeeEntity extends BaseEntity{
     }
     public void setName(String name) {
         this.name = name;
+    }
+    public String getThumbnail() {
+        return thumbnail;
+    }
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
     public String getPhone() {
         return phone;

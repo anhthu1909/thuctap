@@ -37,7 +37,7 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+                <i class="menu-icon fa fa-list-alt"></i>
                 <span class="menu-text"></span>
                 Quản lý loại bài viết
                 <b class="arrow fa fa-angle-down"></b>
@@ -58,7 +58,7 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+                <i class="menu-icon fa fa-list-alt"></i>
                 <span class="menu-text"></span>
                 Quản lý bài viết
                 <b class="arrow fa fa-angle-down"></b>
@@ -69,6 +69,50 @@
                     <a href="<c:url value='/quan-tri/bai-viet/danh-sach?page=1&limit=2'/>">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Danh sách bài viết
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav nav-list">
+        <li >
+            <a href="#" class="dropdown-toggle">
+                <i class=""></i>
+                <i class="menu-icon fa fa-list-alt"></i>
+                <span class="menu-text"></span>
+                Quản lý bệnh viện
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/quan-tri/benh-vien/danh-sach?page=1&limit=2'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách bệnh viện
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav nav-list">
+        <li >
+            <a href="#" class="dropdown-toggle">
+                <i class=""></i>
+                <i class="menu-icon fa fa-list-alt"></i>
+                <span class="menu-text"></span>
+                Quản lý nhân viên
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/quan-tri/nhan-vien/danh-sach?page=1&limit=2'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách nhân viên
                     </a>
                     <b class="arrow"></b>
                 </li>
