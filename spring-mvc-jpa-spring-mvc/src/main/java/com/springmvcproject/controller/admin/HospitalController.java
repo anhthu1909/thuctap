@@ -56,7 +56,7 @@ public class HospitalController {
             mav.addObject("message", message.get("message"));
             mav.addObject("alert", message.get("alert"));
         }
-        //mav.addObject("categories", categoryService.findAll());
+        //mav.addObject("categories", hospitalService.findAll());
         mav.addObject("model", model);
         return mav;
     }

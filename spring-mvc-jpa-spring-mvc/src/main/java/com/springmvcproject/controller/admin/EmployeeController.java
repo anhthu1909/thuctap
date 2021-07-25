@@ -1,10 +1,9 @@
 package com.springmvcproject.controller.admin;
 
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.springmvcproject.dto.EmployeeDTO;
+import com.springmvcproject.service.IEmployeeService;
 import com.springmvcproject.service.IHospitalService;
+import com.springmvcproject.util.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -14,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.springmvcproject.dto.EmployeeDTO;
-import com.springmvcproject.service.IEmployeeService;
-import com.springmvcproject.util.MessageUtil;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 @Controller(value = "employeeControllerOfAdmin")
 public class EmployeeController {

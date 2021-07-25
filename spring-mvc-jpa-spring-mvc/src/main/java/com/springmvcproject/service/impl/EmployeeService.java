@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class EmployeeService implements IEmployeeService {
@@ -26,6 +28,16 @@ public class EmployeeService implements IEmployeeService {
 
     @Autowired
     private EmployeeConverter employeeConverter;
+
+    @Override
+    public Map<String, String> findAll() {
+        Map<String, String> result = new HashMap<>();
+        List<EmployeeEntity> entities = employeeRepository.findAll();
+        for (EmployeeEntity item: entities) {
+            result.put(item.getPhone(), item.getName());
+        }
+        return result;
+    }
 
     @Override
     public List<EmployeeDTO> findAll(Pageable pageable) {
@@ -52,7 +64,7 @@ public class EmployeeService implements IEmployeeService {
     @Override
     @Transactional
     public EmployeeDTO save(EmployeeDTO dto) {
-        HospitalEntity hospital = hospitalRepository.findOneByCode(dto.getHospitalCode());
+        HospitalEntity hospital = hospitalRepository.findOneByPhone(dto.getHospitalPhone());
         EmployeeEntity employeeEntity = new EmployeeEntity();
         if (dto.getId() != null) {
             EmployeeEntity oldEmployee = employeeRepository.findOne(dto.getId());

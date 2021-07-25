@@ -61,28 +61,15 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" for="name"> Tên bệnh viện </label>
                                     <div class="col-sm-9">
-                                        <form:input path="name" cssClass="col-xs-10 col-sm-5"/>
+                                        <form:input path="name" id="name" cssClass="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="phone">
-                                        Số điện thoại </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="phone"> Số điện thoại </label>
                                     <div class="col-sm-9">
-                                        <form:input path="phone" cssClass="col-xs-10 col-sm-5"/>
+                                        <form:input path="phone" id="phone" cssClass="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
-        <%--                        <div class="form-group">--%>
-        <%--                            <label class="col-sm-3 control-label no-padding-right" for="shortDescription"> Mô tả ngắn </label>--%>
-        <%--                            <div class="col-sm-9">--%>
-        <%--                                <form:textarea path="shortDescription" rows="5" cols="10" cssClass="col-xs-10 col-sm-5" id="shortDescription"/>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                        <div class="form-group">--%>
-        <%--                            <label class="col-sm-3 control-label no-padding-right" for="content"> Nội dung </label>--%>
-        <%--                            <div class="col-sm-9">--%>
-        <%--                                <form:textarea path="content" rows="5" cols="10" cssClass="col-xs-10 col-sm-5" id="content"/>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
                                 <form:hidden path="id" id="hospitalId"/>
                                 <div class="clearfix form-actions">
                                     <div class="col-md-offset-3 col-md-9">

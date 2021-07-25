@@ -1,6 +1,7 @@
 package com.springmvcproject.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,13 +15,11 @@ public class HospitalEntity extends BaseEntity{
     @SequenceGenerator(name = "hospital_gen", sequenceName = "hospital_seq", allocationSize = 1)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
 
-    @Column(name = "code")
-    private String code;
-
-    @Column(name = "phone")
+    @Column(name = "phone", unique = true)
+    @Pattern(regexp="(^$|[0-9]{10})")
     private String phone;
 
     @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
@@ -33,14 +32,12 @@ public class HospitalEntity extends BaseEntity{
     public void setName(String name) {
         this.name = name;
     }
-    public String getCode() {
-        return code;
+    public String getPhone() {
+        return phone;
     }
-    public void setCode(String code) {
-        this.code = code;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
-    public String getPhone() { return phone; }
-    public void setPhone(String phone) { this.phone = phone; }
     public List<EmployeeEntity> getEmployees() {
         return employees;
     }

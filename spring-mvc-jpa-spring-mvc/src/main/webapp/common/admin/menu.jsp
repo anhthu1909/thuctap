@@ -37,9 +37,9 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list-alt"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
-                Quản lý loại bài viết
+                Loại bài viết
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
@@ -58,9 +58,9 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list-alt"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
-                Quản lý bài viết
+                Bài viết
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
@@ -80,9 +80,9 @@
         <li >
             <a href="#" class="dropdown-toggle">
                 <i class=""></i>
-                <i class="menu-icon fa fa-list-alt"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
-                Quản lý bệnh viện
+                Bệnh viện
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
@@ -102,9 +102,9 @@
         <li >
             <a href="#" class="dropdown-toggle">
                 <i class=""></i>
-                <i class="menu-icon fa fa-list-alt"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
-                Quản lý nhân viên
+                Nhân viên bệnh viện
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
@@ -113,6 +113,111 @@
                     <a href="<c:url value='/quan-tri/nhan-vien/danh-sach?page=1&limit=2'/>">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Danh sách nhân viên
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav nav-list">
+        <li >
+            <a href="#" class="dropdown-toggle">
+                <i class=""></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
+                <span class="menu-text"></span>
+               Đối tượng khảo sát
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/quan-tri/doi-tuong-khao-sat/danh-sach?page=1&limit=2'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách đối tượng
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav nav-list">
+        <li >
+            <a href="#" class="dropdown-toggle">
+                <i class=""></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
+                <span class="menu-text"></span>
+                Kiểu khảo sát
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/quan-tri/kieu-khao-sat/danh-sach?page=1&limit=2'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách kiểu khảo sát
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+<%--    <ul class="nav nav-list">--%>
+<%--        <li >--%>
+<%--            <a href="#" class="dropdown-toggle">--%>
+<%--&lt;%&ndash;                <i class="menu-icon fa fa-list-alt"></i>&ndash;%&gt;--%>
+<%--                <span class="menu-text"></span>--%>
+<%--                Phiếu khảo sát--%>
+<%--                <b class="arrow fa fa-angle-down"></b>--%>
+<%--            </a>--%>
+<%--            <b class="arrow"></b>--%>
+<%--            <ul class="submenu">--%>
+<%--                <li>--%>
+<%--                    <a href="<c:url value='/quan-tri/phieu-khao-sat/danh-sach?page=1&limit=2'/>">--%>
+<%--                        <i class="menu-icon fa fa-caret-right"></i>--%>
+<%--                        Danh sách phiếu khảo sát--%>
+<%--                    </a>--%>
+<%--                    <b class="arrow"></b>--%>
+<%--                </li>--%>
+<%--            </ul>--%>
+<%--        </li>--%>
+<%--    </ul>--%>
+
+    <ul class="nav nav-list">
+        <li >
+            <a href="#" class="dropdown-toggle">
+                <span class="menu-text"></span>
+                Quyền người dùng
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/quan-tri/quyen/danh-sach?page=1&limit=2'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách quyền
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav nav-list">
+        <li >
+            <a href="#" class="dropdown-toggle">
+                <span class="menu-text"></span>
+                Tài khoản người dùng
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/quan-tri/nguoi-dung/danh-sach?page=1&limit=2'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách người dùng
                     </a>
                     <b class="arrow"></b>
                 </li>

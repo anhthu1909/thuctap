@@ -61,8 +61,8 @@ public class CategoryService implements ICategoryService {
 	public CategoryDTO save(CategoryDTO dto) {
 		CategoryEntity categoryEntity = new CategoryEntity();
 		if (dto.getId() != null) {
-			CategoryEntity oldNew = categoryRepository.findOne(dto.getId());
-			categoryEntity = categoryConverter.toEntity(oldNew, dto);
+			CategoryEntity oldCategory = categoryRepository.findOne(dto.getId());
+			categoryEntity = categoryConverter.toEntity(oldCategory, dto);
 		} else {
 			categoryEntity = categoryConverter.toEntity(dto);
 		}

@@ -19,7 +19,7 @@ public class SurveyObjectEntity extends BaseEntity{
     @Column(name = "code")
     private String code;
 
-    @OneToMany(mappedBy = "surveyobject", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "surveyObject", cascade = CascadeType.ALL)
     private List<SurveyFormEntity> surveyforms = new ArrayList<>();
 
     public Long getId() { return id; }
@@ -31,6 +31,9 @@ public class SurveyObjectEntity extends BaseEntity{
     }
     public String getCode() {
         return code;
+    }
+    public void setCode(String code) {
+        this.code = code;
     }
     public List<SurveyFormEntity> getSurveyforms() {
         return surveyforms;

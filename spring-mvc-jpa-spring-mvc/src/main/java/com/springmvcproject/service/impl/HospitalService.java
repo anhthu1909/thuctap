@@ -61,8 +61,8 @@ public class HospitalService implements IHospitalService {
     public HospitalDTO save(HospitalDTO dto) {
         HospitalEntity hospitalEntity = new HospitalEntity();
         if (dto.getId() != null) {
-            HospitalEntity oldNew = hospitalRepository.findOne(dto.getId());
-            hospitalEntity = hospitalConverter.toEntity(oldNew, dto);
+            HospitalEntity oldHospital = hospitalRepository.findOne(dto.getId());
+            hospitalEntity = hospitalConverter.toEntity(oldHospital, dto);
         } else {
             hospitalEntity = hospitalConverter.toEntity(dto);
         }

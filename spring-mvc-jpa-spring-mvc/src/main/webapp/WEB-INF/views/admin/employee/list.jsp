@@ -63,9 +63,8 @@
                                                 <tr>
                                                     <th><input type="checkbox" id="checkAll"></th>
                                                     <th>Tên nhân viên</th>
-                                                    <th>Bệnh viện công tác</th>
+                                                    <th>Bệnh viện</th>
                                                     <th>Số điện thoại</th>
-                                                    <th>Ảnh đại diện</th>
                                                     <th>Thao tác</th>
                                                 </tr>
                                                 </thead>
@@ -76,7 +75,6 @@
                                                             <td>${item.name}</td>
                                                             <td>${item.hospitalName}</td>
                                                             <td>${item.phone}</td>
-                                                            <td>${item.thumbnail}</td>
                                                             <td>
                                                                 <c:url var="updateEmployeeURL" value="/quan-tri/nhan-vien/chinh-sua" >
                                                                     <c:param name="id" value="${item.id}"/>

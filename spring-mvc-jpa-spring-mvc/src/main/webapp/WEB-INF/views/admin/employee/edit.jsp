@@ -61,28 +61,22 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" for="hospitalName"> Bệnh viện </label>
                                     <div class="col-sm-9">
-                                    <form:select path="hospitalName" id="hospitalName">
-                                        <form:option value="" label="--Chọn bệnh viện--"/>
-                                        <form:options items="${hospitals}"/>
-                                    </form:select>
+                                        <form:select path="hospitalPhone" id="hospitalName">
+                                            <form:option value="" label="--Chọn bệnh viện--"/>
+                                            <form:options items="${hospitals}"/>
+                                        </form:select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" for="name"> Tên nhân viên </label>
                                     <div class="col-sm-9">
-                                        <form:input path="name" cssClass="col-xs-10 col-sm-5"/>
+                                        <form:input path="name" id="name" cssClass="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" for="phone"> Số điện thoại </label>
                                     <div class="col-sm-9">
-                                        <form:input path="phone" cssClass="col-xs-10 col-sm-5"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="thumbnail"> Ảnh đại diện </label>
-                                    <div class="col-sm-9">
-                                        <input type="file" class="col-xs-10 col-sm-5" id="thumbnail" name="thumbnail"/>
+                                        <form:input path="phone" id="phone" cssClass="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                                 <form:hidden path="id" id="employeeId"/>

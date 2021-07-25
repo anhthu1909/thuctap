@@ -5,7 +5,7 @@
         <class>com.springmvcproject.entity.CategoryEntity</class>
         <class>com.springmvcproject.entity.HospitalEntity</class>
         <class>com.springmvcproject.entity.EmployeeEntity</class>
-        <class>com.springmvcproject.entity.UserEntity</class>
+<!--        <class>com.springmvcproject.entity.UserEntity</class>-->
         <class>com.springmvcproject.entity.UserRoleEntity</class>
         <class>com.springmvcproject.entity.RoleEntity</class>
         <class>com.springmvcproject.entity.SurveyTypeEntity</class>

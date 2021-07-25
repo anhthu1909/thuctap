@@ -63,7 +63,7 @@
                                             <tr>
                                                 <th><input type="checkbox" id="checkAll"></th>
                                                 <th>Tên bệnh viện</th>
-                                                <th>Số điện thoại</th>
+                                                <th>Mã bệnh viện</th>
                                                 <th>Thao tác</th>
                                             </tr>
                                             </thead>

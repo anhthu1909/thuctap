@@ -65,24 +65,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="name">
-                                        Mã loại bài viết </label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="code"> Mã loại bài viết </label>
                                     <div class="col-sm-9">
                                         <form:input path="code" placeholder="VD: the-thao" cssClass="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
-        <%--                        <div class="form-group">--%>
-        <%--                            <label class="col-sm-3 control-label no-padding-right" for="shortDescription"> Mô tả ngắn </label>--%>
-        <%--                            <div class="col-sm-9">--%>
-        <%--                                <form:textarea path="shortDescription" rows="5" cols="10" cssClass="col-xs-10 col-sm-5" id="shortDescription"/>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
-        <%--                        <div class="form-group">--%>
-        <%--                            <label class="col-sm-3 control-label no-padding-right" for="content"> Nội dung </label>--%>
-        <%--                            <div class="col-sm-9">--%>
-        <%--                                <form:textarea path="content" rows="5" cols="10" cssClass="col-xs-10 col-sm-5" id="content"/>--%>
-        <%--                            </div>--%>
-        <%--                        </div>--%>
                                 <form:hidden path="id" id="categoryId"/>
                                 <div class="clearfix form-actions">
                                     <div class="col-md-offset-3 col-md-9">

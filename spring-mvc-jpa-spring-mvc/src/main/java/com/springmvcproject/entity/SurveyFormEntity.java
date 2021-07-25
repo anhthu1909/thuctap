@@ -19,13 +19,17 @@ public class SurveyFormEntity extends BaseEntity{
     @Column(name = "code")
     private String code;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "surveytype_id")
-    private SurveyTypeEntity surveytype;
+    @Column(name = "content")
+    private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "surveyobject_id")
-    private SurveyObjectEntity surveyobject;
+    private SurveyObjectEntity surveyObject;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "surveytype_id")
+    private SurveyTypeEntity surveyType;
+
 
     @OneToMany(mappedBy = "surveyform", cascade = CascadeType.ALL)
     private List<SurveyAnswerEntity> surveyforms = new ArrayList<>();
@@ -43,16 +47,24 @@ public class SurveyFormEntity extends BaseEntity{
     public void setCode(String code) {
         this.code = code;
     }
-    public SurveyTypeEntity getSurveytype() {
-        return surveytype;
+    public String getContent() {
+        return content;
     }
-    public void setSurveytype(SurveyTypeEntity surveytype) {
-        this.surveytype = surveytype;
+    public void setContent(String content) {
+        this.content = content;
     }
-    public SurveyObjectEntity getSurveyobject() {
-        return surveyobject;
+    public SurveyObjectEntity getSurveyObject() {
+        return surveyObject;
     }
-    public void setSurveyobject(SurveyObjectEntity surveyobject) { this.surveyobject = surveyobject; }
+    public void setSurveyObject(SurveyObjectEntity surveyObject) {
+        this.surveyObject = surveyObject;
+    }
+    public SurveyTypeEntity getSurveyType() {
+        return surveyType;
+    }
+    public void setSurveyType(SurveyTypeEntity surveyType) {
+        this.surveyType = surveyType;
+    }
     public List<SurveyAnswerEntity> getSurveyforms() {
         return surveyforms;
     }

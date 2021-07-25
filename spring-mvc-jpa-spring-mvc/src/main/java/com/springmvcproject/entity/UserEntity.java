@@ -14,20 +14,15 @@ public class UserEntity extends BaseEntity{
     @SequenceGenerator(name = "users_gen", sequenceName = "users_seq", allocationSize = 1)
     private Long id;
 
-    @Column(name = "username")
+    @Column(name = "username", unique = true)
     private String userName;
 
     @Column(name = "password")
     private String password;
 
-    @Column(name = "fullname")
-    private String fullName;
-
-    @Column(name = "status")
-    private Integer status;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "employee_id")
     private EmployeeEntity employee;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -46,17 +41,11 @@ public class UserEntity extends BaseEntity{
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getFullName() {
-        return fullName;
+    public EmployeeEntity getEmployee() {
+        return employee;
     }
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-    public Integer getStatus() {
-        return status;
-    }
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setEmployee(EmployeeEntity employee) {
+        this.employee = employee;
     }
     public List<UserRoleEntity> getUserrole() {
         return userroles;

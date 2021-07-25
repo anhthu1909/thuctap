@@ -1,6 +1,7 @@
 package com.springmvcproject.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "employee")
@@ -15,17 +16,16 @@ public class EmployeeEntity extends BaseEntity{
     @Column(name = "name")
     private String name;
 
-    @Column(name = "thumbnail")
-    private String thumbnail;
-
-    @Column(name = "phone")
+    @Column(name = "phone", unique = true)
+    @Pattern(regexp="(^$|[0-9]{10})")
     private String phone;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hospital_id")
     private HospitalEntity hospital;
 
-    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn
     private UserEntity users;
 
     public Long getId() { return id; }
@@ -34,12 +34,6 @@ public class EmployeeEntity extends BaseEntity{
     }
     public void setName(String name) {
         this.name = name;
-    }
-    public String getThumbnail() {
-        return thumbnail;
-    }
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
     }
     public String getPhone() {
         return phone;
