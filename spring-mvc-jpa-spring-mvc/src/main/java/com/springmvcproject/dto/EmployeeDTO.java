@@ -32,7 +32,7 @@ public class EmployeeDTO extends AbstractDTO<EmployeeDTO> {
     public void setHospitalPhone(String hospitalPhone) {
         this.hospitalPhone = hospitalPhone;
     }
-        public String getHospitalName() {
+    public String getHospitalName() {
         return hospitalName;
     }
     public void setHospitalName(String hospitalName) {

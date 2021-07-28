@@ -25,9 +25,6 @@ public class UserEntity extends BaseEntity{
     @JoinColumn(name = "employee_id")
     private EmployeeEntity employee;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<UserRoleEntity> userroles = new ArrayList<>();
-
     public Long getId() { return id; }
     public String getUserName() {
         return userName;
@@ -46,11 +43,5 @@ public class UserEntity extends BaseEntity{
     }
     public void setEmployee(EmployeeEntity employee) {
         this.employee = employee;
-    }
-    public List<UserRoleEntity> getUserrole() {
-        return userroles;
-    }
-    public void setUserrole(List<UserRoleEntity> userrole) {
-        this.userroles = userroles;
     }
 }

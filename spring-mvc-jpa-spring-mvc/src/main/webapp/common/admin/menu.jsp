@@ -110,7 +110,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li>
-                    <a href="<c:url value='/quan-tri/nhan-vien/danh-sach?page=1&limit=2'/>">
+                    <a href="<c:url value='/quan-tri/nhan-vien/danh-sach?page=1&limit=10'/>">
                         <i class="menu-icon fa fa-caret-right"></i>
                         Danh sách nhân viên
                     </a>
@@ -164,40 +164,20 @@
         </li>
     </ul>
 
-<%--    <ul class="nav nav-list">--%>
-<%--        <li >--%>
-<%--            <a href="#" class="dropdown-toggle">--%>
-<%--&lt;%&ndash;                <i class="menu-icon fa fa-list-alt"></i>&ndash;%&gt;--%>
-<%--                <span class="menu-text"></span>--%>
-<%--                Phiếu khảo sát--%>
-<%--                <b class="arrow fa fa-angle-down"></b>--%>
-<%--            </a>--%>
-<%--            <b class="arrow"></b>--%>
-<%--            <ul class="submenu">--%>
-<%--                <li>--%>
-<%--                    <a href="<c:url value='/quan-tri/phieu-khao-sat/danh-sach?page=1&limit=2'/>">--%>
-<%--                        <i class="menu-icon fa fa-caret-right"></i>--%>
-<%--                        Danh sách phiếu khảo sát--%>
-<%--                    </a>--%>
-<%--                    <b class="arrow"></b>--%>
-<%--                </li>--%>
-<%--            </ul>--%>
-<%--        </li>--%>
-<%--    </ul>--%>
-
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
-                Quyền người dùng
+                Quản trị viên
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>
             <ul class="submenu">
                 <li>
-                    <a href="<c:url value='/quan-tri/quyen/danh-sach?page=1&limit=2'/>">
+                    <a href="<c:url value='/quan-tri/quan-tri-vien/danh-sach?page=1&limit=10'/>">
                         <i class="menu-icon fa fa-caret-right"></i>
-                        Danh sách quyền
+                        Danh sách quản trị viên
                     </a>
                     <b class="arrow"></b>
                 </li>

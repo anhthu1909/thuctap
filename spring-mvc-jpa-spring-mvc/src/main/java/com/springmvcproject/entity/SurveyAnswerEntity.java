@@ -16,10 +16,6 @@ public class SurveyAnswerEntity extends BaseEntity{
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_role_id")
-    private UserRoleEntity userrole;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "surveyform_id")
     private SurveyFormEntity surveyform;
 
@@ -32,8 +28,6 @@ public class SurveyAnswerEntity extends BaseEntity{
     public void setContent(String content) {
         this.content = content;
     }
-    public UserRoleEntity getUserrole() { return userrole; }
-    public void setUserrole(UserRoleEntity userrole) { this.userrole = userrole; }
     public SurveyFormEntity getSurveyform() {
         return surveyform;
     }

@@ -141,7 +141,7 @@
                 window.location.href = "${editSurveyTypeURL}?id="+result.id+"&message=insert_success";
             },
             error: function (error) {
-                window.location.href = "${surveyTypeURL}?page=1&limit=2&message=error_system";
+                window.location.href = "${surveyTypeURL}?page=1&limit=10&message=error_system";
             }
         });
     }

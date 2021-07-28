@@ -128,7 +128,7 @@
                 window.location.href = "${editHospitalURL}?id="+result.id+"&message=insert_success";
             },
             error: function (error) {
-                window.location.href = "${hospitalURL}?page=1&limit=2&message=error_system";
+                window.location.href = "${hospitalURL}?page=1&limit=10&message=error_system";
             }
         });
     }

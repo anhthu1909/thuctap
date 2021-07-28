@@ -109,7 +109,7 @@
                 startPage: currentPage,
                 onPageClick: function (event, page) {
                     if (currentPage != page) {
-                        $('#limit').val(2);
+                        $('#limit').val(10);
                         $('#page').val(page);
                         $('#formSubmit').submit();
                     }
@@ -146,10 +146,10 @@
                 contentType: 'application/json',
                 data: JSON.stringify(data),
                 success: function (result) {
-                    window.location.href = "${hospitalURL}?page=1&limit=2&message=delete_success";
+                    window.location.href = "${hospitalURL}?page=1&limit=10&message=delete_success";
                 },
                 error: function (error) {
-                    window.location.href = "${hospitalURL}?page=1&limit=2&message=error_system";
+                    window.location.href = "${hospitalURL}?page=1&limit=10&message=error_system";
                 }
             });
         }

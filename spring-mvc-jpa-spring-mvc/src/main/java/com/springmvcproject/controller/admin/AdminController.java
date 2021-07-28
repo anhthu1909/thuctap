@@ -1,7 +1,7 @@
 package com.springmvcproject.controller.admin;
 
-import com.springmvcproject.dto.RoleDTO;
-import com.springmvcproject.service.IRoleService;
+import com.springmvcproject.dto.AdminDTO;
+import com.springmvcproject.service.IAdminService;
 import com.springmvcproject.util.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -15,25 +15,25 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-@Controller(value = "roleControllerOfAdmin")
-public class RoleController {
+@Controller(value = "adminControllerOfAdmin")
+public class AdminController {
 
     @Autowired
-    private IRoleService roleService;
+    private IAdminService adminService;
 
     @Autowired
     private MessageUtil messageUtil;
 
-    @RequestMapping(value = "/quan-tri/quyen/danh-sach", method = RequestMethod.GET)
+    @RequestMapping(value = "/quan-tri/quan-tri-vien/danh-sach", method = RequestMethod.GET)
     public ModelAndView showList(@RequestParam("page") int page,
                                  @RequestParam("limit") int limit, HttpServletRequest request) {
-        RoleDTO model = new RoleDTO();
+        AdminDTO model = new AdminDTO();
         model.setPage(page);
         model.setLimit(limit);
-        ModelAndView mav = new ModelAndView("admin/role/list");
+        ModelAndView mav = new ModelAndView("admin/admin/list");
         Pageable pageable = new PageRequest(page - 1, limit);
-        model.setListResult(roleService.findAll(pageable));
-        model.setTotalItem(roleService.getTotalItem());
+        model.setListResult(adminService.findAll(pageable));
+        model.setTotalItem(adminService.getTotalItem());
         model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getLimit()));
         if (request.getParameter("message") != null) {
             Map<String, String> message = messageUtil.getMessage(request.getParameter("message"));
@@ -44,12 +44,12 @@ public class RoleController {
         return mav;
     }
 
-    @RequestMapping(value = "/quan-tri/quyen/chinh-sua", method = RequestMethod.GET)
-    public ModelAndView editRole(@RequestParam(value = "id", required = false) Long id, HttpServletRequest request) {
-        ModelAndView mav = new ModelAndView("admin/role/edit");
-        RoleDTO model = new RoleDTO();
+    @RequestMapping(value = "/quan-tri/quan-tri-vien/chinh-sua", method = RequestMethod.GET)
+    public ModelAndView editAdmin(@RequestParam(value = "id", required = false) Long id, HttpServletRequest request) {
+        ModelAndView mav = new ModelAndView("admin/admin/edit");
+        AdminDTO model = new AdminDTO();
         if (id != null) {
-            model = roleService.findById(id);
+            model = adminService.findById(id);
         }
         if (request.getParameter("message") != null) {
             Map<String, String> message = messageUtil.getMessage(request.getParameter("message"));
