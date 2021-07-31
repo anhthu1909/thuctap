@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp" %>
-<c:url var="categoryURL" value="/quan-tri/loai-bai-viet/danh-sach"/>
-<c:url var="editCategoryURL" value="/quan-tri/loai-bai-viet/chinh-sua"/>
-<c:url var="categoryAPI" value="/api/category"/>
+<c:url var="userURL" value="/quan-tri/nguoi-dung/danh-sach"/>
+<c:url var="editUserURL" value="/quan-tri/nguoi-dung/chinh-sua"/>
+<c:url var="userAPI" value="/api/user"/>
 <html>
 <head>
-	<title>Chỉnh sửa loại bài viết</title>
+	<title>Chỉnh sửa người dùng</title>
 </head>
 <body>
 <div class="main-content">
@@ -42,11 +42,11 @@
 						<div class="table-btn-controls">
 							<div class="pull-right tableTools-container">
 								<div class="dt-buttons btn-overlap btn-group">
-									<c:url var="createCategoryURl" value="/quan-tri/loai-bai-viet/chinh-sua" />
+									<c:url var="createUserURl" value="/quan-tri/nguoi-dung/chinh-sua" />
 									<a flag="info"
 									   class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
 									   data-toggle="tooltip"
-									   title='Thêm loại bài viết' href='${createCategoryURl}'>
+									   title='Thêm người dùng' href='${createUserURl}'>
 										<span>
 											<i class="fa fa-plus-circle bigger-110 purple"></i>
 										</span>
@@ -57,32 +57,44 @@
 					</div>
 					<div class="row">
 						<div class="col-xs-12">
-							<form:form class="form-horizontal" role="form" id="formSubmit" modelAttribute="model">
+							<form:form class="form-horizontal" user="form" id="formSubmit" modelAttribute="model">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="name"> Tên loại bài viết </label>
+									<label class="col-sm-3 control-label no-padding-right" for="userName"> Tên người dùng </label>
 									<div class="col-sm-9">
-										<form:input path="name" cssClass="col-xs-10 col-sm-5"/>
+										<form:input path="userName" id="userName" cssClass="col-xs-10 col-sm-5"/>
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="code"> Mã loại bài viết </label>
+									<label class="col-sm-3 control-label no-padding-right" for="password"> Mật khẩu </label>
 									<div class="col-sm-9">
-										<form:input path="code" cssClass="col-xs-10 col-sm-5"/>
+										<form:input path="password" id="password" type="password" cssClass="col-xs-10 col-sm-5"/>
 									</div>
 								</div>
-								<form:hidden path="id" id="categoryId"/>
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="fullName"> Họ và tên </label>
+									<div class="col-sm-9">
+										<form:input path="fullName" id="fullName" cssClass="col-xs-10 col-sm-5"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right" for="status"> Trạng thái </label>
+									<div class="col-sm-9">
+										<form:input path="status" id="status" placeholder="0 hoặc 1" cssClass="col-xs-10 col-sm-5"/>
+									</div>
+								</div>
+								<form:hidden path="id" id="userId"/>
 								<div class="clearfix form-actions">
 									<div class="col-md-offset-3 col-md-9">
 										<c:if test="${not empty model.id}">
-											<button class="btn btn-info" type="button" id="btnAddOrUpdateCategory">
+											<button class="btn btn-info" type="button" id="btnAddOrUpdateUser">
 												<i class="ace-icon fa fa-check bigger-110"></i>
-												Cập nhật loại bài viết
+												Cập nhật người dùng
 											</button>
 										</c:if>
 										<c:if test="${empty model.id}">
-											<button class="btn btn-info" type="button" id="btnAddOrUpdateCategory">
+											<button class="btn btn-info" type="button" id="btnAddOrUpdateUser">
 												<i class="ace-icon fa fa-check bigger-110"></i>
-												Thêm loại bài viết
+												Thêm người dùng
 											</button>
 										</c:if>
 
@@ -102,49 +114,49 @@
 	</div>
 </div>
 <script>
-	$('#btnAddOrUpdateCategory').click(function (e) {
+	$('#btnAddOrUpdateUser').click(function (e) {
 		e.preventDefault();
 		var data = {};
 		var formData = $('#formSubmit').serializeArray();
 		$.each(formData, function (i, v) {
 			data[""+v.name+""] = v.value;
 		});
-		var id = $('#categoryId').val();
+		var id = $('#userId').val();
 		if (id == "") {
-			addCategory(data);
+			addUser(data);
 		} else {
-			updateCategory(data);
+			updateUser(data);
 		}
 	});
 
-	function addCategory(data) {
+	function addUser(data) {
 		$.ajax({
-			url: '${categoryAPI}',
+			url: '${userAPI}',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify(data),
 			dataType: 'json',
 			success: function (result) {
-				window.location.href = "${editCategoryURL}?id="+result.id+"&message=insert_success";
+				window.location.href = "${editUserURL}?id="+result.id+"&message=insert_success";
 			},
 			error: function (error) {
-				window.location.href = "${categoryURL}?page=1&limit=10&message=error_system";
+				window.location.href = "${userURL}?page=1&limit=10&message=error_system";
 			}
 		});
 	}
 
-	function updateCategory(data) {
+	function updateUser(data) {
 		$.ajax({
-			url: '${categoryAPI}',
+			url: '${userAPI}',
 			type: 'PUT',
 			contentType: 'application/json',
 			data: JSON.stringify(data),
 			dataType: 'json',
 			success: function (result) {
-				window.location.href = "${editCategoryURL}?id="+result.id+"&message=update_success";
+				window.location.href = "${editUserURL}?id="+result.id+"&message=update_success";
 			},
 			error: function (error) {
-				window.location.href = "${editCategoryURL}?id="+result.id+"&message=error_system";
+				window.location.href = "${editUserURL}?id="+result.id+"&message=error_system";
 			}
 		});
 	}
