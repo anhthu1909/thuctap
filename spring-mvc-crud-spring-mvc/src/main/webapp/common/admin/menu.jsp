@@ -81,6 +81,48 @@
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text"></span>
+                Quản lý đối tượng
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/quan-tri/doi-tuong-khao-sat/danh-sach?page=1&limit=10'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách đối tượng
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav nav-list">
+        <li >
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text"></span>
+                Quản lý kiểu khảo sát
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/quan-tri/kieu-khao-sat/danh-sach?page=1&limit=10'/>">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách kiểu khảo sát
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav nav-list">
+        <li >
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text"></span>
                 Quản lý quyền
                 <b class="arrow fa fa-angle-down"></b>
             </a>
