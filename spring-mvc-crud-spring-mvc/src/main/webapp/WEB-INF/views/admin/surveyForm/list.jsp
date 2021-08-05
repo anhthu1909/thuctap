@@ -1,25 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp" %>
-<c:url var="userAPI" value="/api/user"/>
-<c:url var="userURL" value="/quan-tri/nguoi-dung/danh-sach"/>
+<c:url var="surveyFormAPI" value="/api/surveyForm"/>
+<c:url var="surveyFormURL" value="/quan-tri/phieu-khao-sat/danh-sach"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Danh sách người dùng</title>
+	<title>Danh sách phiếu khảo sát</title>
 </head>
 
 <body>
 <div class="main-content">
-	<form action="<c:url value='/quan-tri/nguoi-dung/danh-sach'/>" id="formSubmit" method="get">
-
+	<form action="<c:url value='/quan-tri/phieu-khao-sat/danh-sach'/>" id="formSubmit" method="get">
 		<div class="main-content-inner">
 			<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 				<ul class="breadcrumb">
 					<li>
 						<i class="ace-icon fa fa-home home-icon"></i>
-						<a href="#">Trang chủ</a>
+						<a href="#">Phiếu khảo sát</a>
 					</li>
 				</ul>
 				<!-- /.breadcrumb -->
@@ -29,27 +28,27 @@
 					<div class="col-xs-12">
 						<c:if test="${not empty message}">
 							<div class="alert alert-${alert}">
-									${message}
+								${message}
 							</div>
 						</c:if>
 						<div class="widget-box table-filter">
 							<div class="table-btn-controls">
 								<div class="pull-right tableTools-container">
 									<div class="dt-buttons btn-overlap btn-group">
-										<c:url var="createUserURl" value="/quan-tri/nguoi-dung/chinh-sua" />
+										<c:url var="createSurveyFormURl" value="/quan-tri/phieu-khao-sat/chinh-sua" />
 										<a flag="info"
 										   class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
 										   data-toggle="tooltip"
-										   title='Thêm người dùng' href='${createUserURl}'>
+										   title='Thêm phiếu khảo sát' href='${createSurveyFormURl}'>
                                                 <span>
                                                     <i class="fa fa-plus-circle bigger-110 purple"></i>
                                                 </span>
 										</a>
 										<button id="btnDelete" type="button" onclick="warningBeforeDelete()"
-												class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa người dùng'>
-                                                    <span>
-                                                        <i class="fa fa-trash-o bigger-110 pink"></i>
-                                                    </span>
+											class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa phiếu khảo sát'>
+												<span>
+													<i class="fa fa-trash-o bigger-110 pink"></i>
+												</span>
 										</button>
 									</div>
 								</div>
@@ -62,10 +61,10 @@
 										<thead>
 										<tr>
 											<th><input type="checkbox" id="checkAll"></th>
-											<th>Tên người dùng</th>
-											<th>Mật khẩu</th>
-											<th>Tên đầy đủ</th>
-											<th>Trạng thái</th>
+<%--											<th>Tên phiếu khảo sát</th>--%>
+											<th>Đối tượng khảo sát</th>
+											<th>Kiểu khảo sát</th>
+											<th>Nội dung phiếu khảo sát</th>
 											<th>Thao tác</th>
 										</tr>
 										</thead>
@@ -73,16 +72,16 @@
 										<c:forEach var="item" items="${model.listResult}">
 											<tr>
 												<td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>
-												<td>${item.userName}</td>
-												<td>${item.password}</td>
-												<td>${item.fullName}</td>
-												<td>${item.status}</td>
+<%--												<td>${item.name}</td>--%>
+												<td>${item.surveyObjectName}</td>
+												<td>${item.surveyTypeName}</td>
+												<td>${item.content}</td>
 												<td>
-													<c:url var="updateUserURL" value="/quan-tri/nguoi-dung/chinh-sua" >
+													<c:url var="updateSurveyFormURL" value="/quan-tri/phieu-khao-sat/chinh-sua" >
 														<c:param name="id" value="${item.id}"/>
 													</c:url>
 													<a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
-													   title="Cập nhật bài viết" href='${updateUserURL}'><i
+													   title="Cập nhật bài viết" href='${updateSurveyFormURL}'><i
 															class="fa fa-pencil-square-o" aria-hidden="true"></i>
 													</a>
 												</td>
@@ -138,22 +137,22 @@
 				var ids = $('tbody input[type=checkbox]:checked').map(function () {
 					return $(this).val();
 				}).get();
-				deleteUser(ids);
+				deleteSurveyForm(ids);
 			}
 		});
 	}
 
-	function deleteUser(data) {
+	function deleteSurveyForm(data) {
 		$.ajax({
-			url: '${userAPI}',
+			url: '${surveyFormAPI}',
 			type: 'DELETE',
 			contentType: 'application/json',
 			data: JSON.stringify(data),
 			success: function (result) {
-				window.location.href = "${userURL}?page=1&limit=10&message=delete_success";
+				window.location.href = "${surveyFormURL}?page=1&limit=10&message=delete_success";
 			},
 			error: function (error) {
-				window.location.href = "${userURL}?page=1&limit=10&message=error_system";
+				window.location.href = "${surveyFormURL}?page=1&limit=10&message=error_system";
 			}
 		});
 	}

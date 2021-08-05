@@ -37,7 +37,7 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list-alt"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
                 Loại bài viết
                 <b class="arrow fa fa-angle-down"></b>
@@ -58,7 +58,7 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
                 Quản lý bài viết
                 <b class="arrow fa fa-angle-down"></b>
@@ -79,7 +79,7 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
                 Quản lý đối tượng
                 <b class="arrow fa fa-angle-down"></b>
@@ -100,7 +100,7 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
                 Quản lý kiểu khảo sát
                 <b class="arrow fa fa-angle-down"></b>
@@ -121,7 +121,29 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
+                <span class="menu-text"></span>
+                Quản lý phiếu khảo sát
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">
+                <li>
+                    <a href="<c:url value='/quan-tri/phieu-khao-sat/danh-sach?page=1&limit=10'/>">
+<%--                    <a href="<c:url value='/quan-tri/phieu-khao-sat/chinh-sua'/>">--%>
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        Danh sách phiếu khảo sát
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav nav-list">
+        <li >
+            <a href="#" class="dropdown-toggle">
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
                 Quản lý quyền
                 <b class="arrow fa fa-angle-down"></b>
@@ -142,7 +164,7 @@
     <ul class="nav nav-list">
         <li >
             <a href="#" class="dropdown-toggle">
-                <i class="menu-icon fa fa-list"></i>
+<%--                <i class="menu-icon fa fa-list-alt"></i>--%>
                 <span class="menu-text"></span>
                 Quản lý người dùng
                 <b class="arrow fa fa-angle-down"></b>

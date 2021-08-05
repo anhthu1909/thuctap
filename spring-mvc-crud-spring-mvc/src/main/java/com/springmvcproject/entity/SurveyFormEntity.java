@@ -13,13 +13,10 @@ public class SurveyFormEntity extends BaseEntity{
     @SequenceGenerator(name = "surveyform_gen", sequenceName = "surveyform_seq", allocationSize = 1)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+//    @Column(name = "name")
+//    private String name;
 
-    @Column(name = "code")
-    private String code;
-
-    @Column(name = "content")
+    @Column(name = "content", columnDefinition = "Clob")
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -35,18 +32,12 @@ public class SurveyFormEntity extends BaseEntity{
     private List<SurveyAnswerEntity> surveyforms = new ArrayList<>();
 
     public Long getId() { return id; }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getCode() {
-        return code;
-    }
-    public void setCode(String code) {
-        this.code = code;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
     public String getContent() {
         return content;
     }

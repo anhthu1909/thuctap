@@ -71,7 +71,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="fullName"> Họ và tên </label>
+									<label class="col-sm-3 control-label no-padding-right" for="fullName"> Tên đầy đủ </label>
 									<div class="col-sm-9">
 										<form:input path="fullName" id="fullName" cssClass="col-xs-10 col-sm-5"/>
 									</div>
@@ -79,7 +79,7 @@
 								<div class="form-group">
 									<label class="col-sm-3 control-label no-padding-right" for="status"> Trạng thái </label>
 									<div class="col-sm-9">
-										<form:input path="status" id="status" placeholder="0 hoặc 1" cssClass="col-xs-10 col-sm-5"/>
+										<form:input path="status" id="status" placeholder="1 or 2" cssClass="col-xs-10 col-sm-5"/>
 									</div>
 								</div>
 								<form:hidden path="id" id="userId"/>
