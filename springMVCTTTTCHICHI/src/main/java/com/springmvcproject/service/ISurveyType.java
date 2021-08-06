@@ -1,6 +1,6 @@
-package com.laptrinhjavaweb.service;
+package com.springmvcproject.service;
 
-import com.laptrinhjavaweb.dto.SurveyTypeDTO;
+import com.springmvcproject.dto.SurveyTypeDTO;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.service.impl;
+package com.springmvcproject.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +11,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.laptrinhjavaweb.constant.SystemConstant;
-import com.laptrinhjavaweb.dto.MyUser;
-import com.laptrinhjavaweb.entity.RoleEntity;
-import com.laptrinhjavaweb.entity.UserEntity;
-import com.laptrinhjavaweb.repository.UserRepository;
+import com.springmvcproject.constant.SystemConstant;
+import com.springmvcproject.dto.MyUser;
+import com.springmvcproject.entity.RoleEntity;
+import com.springmvcproject.entity.UserEntity;
+import com.springmvcproject.repository.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

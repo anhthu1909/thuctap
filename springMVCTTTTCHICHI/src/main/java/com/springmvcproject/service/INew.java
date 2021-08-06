@@ -1,8 +1,8 @@
-package com.laptrinhjavaweb.service;
+package com.springmvcproject.service;
 
 import java.util.List;
 
-import com.laptrinhjavaweb.dto.NewDTO;
+import com.springmvcproject.dto.NewDTO;
 
 public interface INew {
     List<NewDTO> findAll();

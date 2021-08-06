@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.until;
+package com.springmvcproject.until;
 
 import org.springframework.stereotype.Component;
 

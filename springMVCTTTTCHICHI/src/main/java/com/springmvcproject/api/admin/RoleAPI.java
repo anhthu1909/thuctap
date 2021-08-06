@@ -1,7 +1,7 @@
-package com.laptrinhjavaweb.api.admin;
+package com.springmvcproject.api.admin;
 
-import com.laptrinhjavaweb.dto.RoleDTO;
-import com.laptrinhjavaweb.service.IRole;
+import com.springmvcproject.dto.RoleDTO;
+import com.springmvcproject.service.IRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.until;
+package com.springmvcproject.until;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import com.laptrinhjavaweb.dto.MyUser;
+import com.springmvcproject.dto.MyUser;
 
 public class SecurityUtils {
 

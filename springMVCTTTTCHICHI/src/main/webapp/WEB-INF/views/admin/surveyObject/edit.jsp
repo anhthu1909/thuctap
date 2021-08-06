@@ -35,41 +35,60 @@
                                 ${message}
                         </div>
                     </c:if>
-                    <form:form class="form-horizontal" role="form" id="formSubmit" modelAttribute="model">
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Tên đối tượng</label>
-                            <div class="col-sm-9">
-                                <form:input path="name" cssClass="col-xs-10 col-sm-5"/>
+                    <div class="widget-box table-filter">
+                        <div class="table-btn-controls">
+                            <div class="pull-right tableTools-container">
+                                <div class="dt-buttons btn-overlap btn-group">
+                                    <c:url var="createSurveyObjectURl" value="/quan-tri/bai-viet/cs-doi-tuong" />
+                                    <a flag="info"
+                                       class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
+                                       data-toggle="tooltip"
+                                       title='Thêm đối tượng khảo sát' href='${createSurveyObjectURl}'>
+										<span>
+											<i class="fa fa-plus-circle bigger-110 purple"></i>
+										</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <form:form class="form-horizontal" role="form" id="formSubmit" modelAttribute="model">
 
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="name">Tên đối tượng</label>
+                                    <div class="col-sm-9">
+                                        <form:input path="name" cssClass="col-xs-10 col-sm-5"/>
+                                    </div>
+                                </div>
 
+                                <form:hidden path="id" id="surveyObjectId"/>
+                                <div class="clearfix form-actions">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <c:if test="${not empty model.id}">
+                                            <button class="btn btn-info" type="button" id="btnAddOrUpdateSurveyObject">
+                                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                                Cập nhật đối tượng
+                                            </button>
+                                        </c:if>
+                                        <c:if test="${empty model.id}">
+                                            <button class="btn btn-info" type="button" id="btnAddOrUpdateSurveyObject">
+                                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                                Thêm đối tượng
+                                            </button>
+                                        </c:if>
 
-                        <form:hidden path="id" id="surveyObjectId"/>
-                        <div class="clearfix form-actions">
-                            <div class="col-md-offset-3 col-md-9">
-                                <c:if test="${not empty model.id}">
-                                    <button class="btn btn-info" type="button" id="btnAddOrUpdateSurveyObject">
-                                        <i class="ace-icon fa fa-check bigger-110"></i>
-                                        Cập nhật đối tượng
-                                    </button>
-                                </c:if>
-                                <c:if test="${empty model.id}">
-                                    <button class="btn btn-info" type="button" id="btnAddOrUpdateSurveyObject">
-                                        <i class="ace-icon fa fa-check bigger-110"></i>
-                                        Thêm đối tượng
-                                    </button>
-                                </c:if>
-
-                                &nbsp; &nbsp; &nbsp;
-                                <button class="btn" type="reset">
-                                    <i class="ace-icon fa fa-undo bigger-110"></i>
-                                    Hủy
-                                </button>
-                            </div>
+                                        &nbsp; &nbsp; &nbsp;
+                                        <button class="btn" type="reset">
+                                            <i class="ace-icon fa fa-undo bigger-110"></i>
+                                            Hủy
+                                        </button>
+                                    </div>
+                                </div>
+                            </form:form>
                         </div>
-                    </form:form>
+                    </div>
                 </div>
             </div>
         </div>

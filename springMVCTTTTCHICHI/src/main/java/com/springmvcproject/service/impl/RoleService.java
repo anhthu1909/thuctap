@@ -1,11 +1,11 @@
-package com.laptrinhjavaweb.service.impl;
+package com.springmvcproject.service.impl;
 
 
-import com.laptrinhjavaweb.converter.RoleConverter;
-import com.laptrinhjavaweb.dto.RoleDTO;
-import com.laptrinhjavaweb.entity.RoleEntity;
-import com.laptrinhjavaweb.repository.RoleRepository;
-import com.laptrinhjavaweb.service.IRole;
+import com.springmvcproject.converter.RoleConverter;
+import com.springmvcproject.dto.RoleDTO;
+import com.springmvcproject.entity.RoleEntity;
+import com.springmvcproject.repository.RoleRepository;
+import com.springmvcproject.service.IRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

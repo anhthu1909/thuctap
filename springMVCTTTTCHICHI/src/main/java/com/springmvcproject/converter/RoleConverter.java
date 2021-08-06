@@ -1,7 +1,7 @@
-package com.laptrinhjavaweb.converter;
+package com.springmvcproject.converter;
 
-import com.laptrinhjavaweb.dto.RoleDTO;
-import com.laptrinhjavaweb.entity.RoleEntity;
+import com.springmvcproject.dto.RoleDTO;
+import com.springmvcproject.entity.RoleEntity;
 import org.springframework.stereotype.Component;
 
 @Component

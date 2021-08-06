@@ -18,7 +18,7 @@
                      login-processing-url="/j_spring_security_check"
                      authentication-success-handler-ref="customSuccessHandler"
                      authentication-failure-url="/dang-nhap?incorrectAccount"/>
-<!--        <session-management invalid-session-url="/dang-nhap?sessionTimeout"/>-->
+        <session-management invalid-session-url="/dang-nhap?sessionTimeout"/>
         <logout delete-cookies="JSESSIONID"/>
     </http>
     <authentication-manager >
@@ -26,8 +26,8 @@
         </authentication-provider>
     </authentication-manager>
 
-    <beans:bean id="customUserDetailsService" class="com.laptrinhjavaweb.service.impl.CustomUserDetailsService" />
-    <beans:bean id="customSuccessHandler" class="com.laptrinhjavaweb.security.CustomSuccessHandler" />
+    <beans:bean id="customUserDetailsService" class="com.springmvcproject.service.impl.CustomUserDetailsService" />
+    <beans:bean id="customSuccessHandler" class="com.springmvcproject.security.CustomSuccessHandler" />
 
 
 </beans:beans>

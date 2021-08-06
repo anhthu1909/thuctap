@@ -1,9 +1,9 @@
-package com.laptrinhjavaweb.controller.admin;
+package com.springmvcproject.controller.admin;
 
-import com.laptrinhjavaweb.dto.SurveyFormDTO;
-import com.laptrinhjavaweb.service.ISurveyForm;
-import com.laptrinhjavaweb.service.IUser;
-import com.laptrinhjavaweb.until.MessageUtil;
+import com.springmvcproject.dto.SurveyFormDTO;
+import com.springmvcproject.service.ISurveyForm;
+import com.springmvcproject.service.IUser;
+import com.springmvcproject.until.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,6 +1,6 @@
-package com.laptrinhjavaweb.service;
+package com.springmvcproject.service;
 
-import com.laptrinhjavaweb.dto.UserDTO;
+import com.springmvcproject.dto.UserDTO;
 
 import java.util.List;
 

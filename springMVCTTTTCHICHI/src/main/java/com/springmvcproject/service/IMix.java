@@ -1,6 +1,6 @@
-package com.laptrinhjavaweb.service;
+package com.springmvcproject.service;
 
-import com.laptrinhjavaweb.dto.MixDTO;
+import com.springmvcproject.dto.MixDTO;
 
 import java.util.List;
 

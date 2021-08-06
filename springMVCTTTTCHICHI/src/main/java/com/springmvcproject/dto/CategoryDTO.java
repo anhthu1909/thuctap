@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.dto;
+package com.springmvcproject.dto;
 
 public class CategoryDTO extends AbstractDTO<CategoryDTO> {
 	

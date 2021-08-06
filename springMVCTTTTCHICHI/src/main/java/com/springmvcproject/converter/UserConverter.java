@@ -1,7 +1,7 @@
-package com.laptrinhjavaweb.converter;
+package com.springmvcproject.converter;
 
-import com.laptrinhjavaweb.dto.UserDTO;
-import com.laptrinhjavaweb.entity.UserEntity;
+import com.springmvcproject.dto.UserDTO;
+import com.springmvcproject.entity.UserEntity;
 import org.springframework.stereotype.Component;
 
 @Component

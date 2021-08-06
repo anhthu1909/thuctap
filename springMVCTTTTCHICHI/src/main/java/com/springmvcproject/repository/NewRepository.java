@@ -1,8 +1,8 @@
-package com.laptrinhjavaweb.repository;
+package com.springmvcproject.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.laptrinhjavaweb.entity.NewEntity;
+import com.springmvcproject.entity.NewEntity;
 
 public interface NewRepository extends JpaRepository<NewEntity, Long> {
 

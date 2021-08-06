@@ -1,8 +1,8 @@
-package com.laptrinhjavaweb.controller.admin;
+package com.springmvcproject.controller.admin;
 
-import com.laptrinhjavaweb.dto.NewDTO;
-import com.laptrinhjavaweb.service.INew;
-import com.laptrinhjavaweb.until.MessageUtil;
+import com.springmvcproject.dto.NewDTO;
+import com.springmvcproject.service.INew;
+import com.springmvcproject.until.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.entity;
+package com.springmvcproject.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class SurveyFormEntity extends BaseEntity {
     @Column(name="id")
     private Long id;
 
-    @Column(name="content",columnDefinition = "Clob")
+    @Column(name="content", columnDefinition = "Clob")
     private String content;
 
     @OneToMany(mappedBy = "surveyform")

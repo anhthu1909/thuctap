@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.entity;
+package com.springmvcproject.entity;
 
 import javax.persistence.*;
 

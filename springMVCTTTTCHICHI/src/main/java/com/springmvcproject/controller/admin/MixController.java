@@ -1,12 +1,10 @@
-package com.laptrinhjavaweb.controller.admin;
+package com.springmvcproject.controller.admin;
 
-import com.laptrinhjavaweb.dto.*;
-import com.laptrinhjavaweb.service.*;
-import com.laptrinhjavaweb.service.impl.RoleService;
-import com.laptrinhjavaweb.until.MessageUtil;
+import com.springmvcproject.dto.*;
+import com.springmvcproject.service.*;
+import com.springmvcproject.until.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;

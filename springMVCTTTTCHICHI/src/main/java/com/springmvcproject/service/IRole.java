@@ -1,9 +1,8 @@
-package com.laptrinhjavaweb.service;
+package com.springmvcproject.service;
 
-import com.laptrinhjavaweb.dto.RoleDTO;
+import com.springmvcproject.dto.RoleDTO;
 
 import java.util.List;
-import java.util.Map;
 
 public interface IRole {
 

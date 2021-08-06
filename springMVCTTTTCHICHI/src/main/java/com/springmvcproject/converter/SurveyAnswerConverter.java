@@ -1,7 +1,7 @@
-package com.laptrinhjavaweb.converter;
+package com.springmvcproject.converter;
 
-import com.laptrinhjavaweb.dto.SurveyAnswerDTO;
-import com.laptrinhjavaweb.entity.SurveyAnswerEntity;
+import com.springmvcproject.dto.SurveyAnswerDTO;
+import com.springmvcproject.entity.SurveyAnswerEntity;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,7 +1,7 @@
-package com.laptrinhjavaweb.converter;
+package com.springmvcproject.converter;
 
-import com.laptrinhjavaweb.dto.SurveyFormDTO;
-import com.laptrinhjavaweb.entity.SurveyFormEntity;
+import com.springmvcproject.dto.SurveyFormDTO;
+import com.springmvcproject.entity.SurveyFormEntity;
 import org.springframework.stereotype.Component;
 
 @Component

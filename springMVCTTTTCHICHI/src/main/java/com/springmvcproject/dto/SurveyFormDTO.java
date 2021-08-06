@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.dto;
+package com.springmvcproject.dto;
 
 public class SurveyFormDTO extends AbstractDTO<SurveyFormDTO> {
 

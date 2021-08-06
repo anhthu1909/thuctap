@@ -1,10 +1,10 @@
-package com.laptrinhjavaweb.service.impl;
+package com.springmvcproject.service.impl;
 
-import com.laptrinhjavaweb.converter.UserConverter;
-import com.laptrinhjavaweb.dto.UserDTO;
-import com.laptrinhjavaweb.entity.UserEntity;
-import com.laptrinhjavaweb.repository.UserRepository;
-import com.laptrinhjavaweb.service.IUser;
+import com.springmvcproject.converter.UserConverter;
+import com.springmvcproject.dto.UserDTO;
+import com.springmvcproject.entity.UserEntity;
+import com.springmvcproject.repository.UserRepository;
+import com.springmvcproject.service.IUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

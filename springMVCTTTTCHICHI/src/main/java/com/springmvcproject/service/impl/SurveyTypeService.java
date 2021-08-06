@@ -1,10 +1,10 @@
-package com.laptrinhjavaweb.service.impl;
+package com.springmvcproject.service.impl;
 
-import com.laptrinhjavaweb.converter.SurveyTypeConverter;
-import com.laptrinhjavaweb.dto.SurveyTypeDTO;
-import com.laptrinhjavaweb.entity.SurveyTypeEntity;
-import com.laptrinhjavaweb.repository.SurveyTypeRepository;
-import com.laptrinhjavaweb.service.ISurveyType;
+import com.springmvcproject.converter.SurveyTypeConverter;
+import com.springmvcproject.dto.SurveyTypeDTO;
+import com.springmvcproject.entity.SurveyTypeEntity;
+import com.springmvcproject.repository.SurveyTypeRepository;
+import com.springmvcproject.service.ISurveyType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

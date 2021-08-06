@@ -1,9 +1,9 @@
-package com.laptrinhjavaweb.service;
+package com.springmvcproject.service;
 
 
 import java.util.List;
 
-import com.laptrinhjavaweb.dto.SurveyFormDTO;
+import com.springmvcproject.dto.SurveyFormDTO;
 
 
 public interface ISurveyForm {

@@ -1,9 +1,8 @@
 
-        package com.laptrinhjavaweb.api.admin;
+        package com.springmvcproject.api.admin;
 
-import com.laptrinhjavaweb.dto.MixDTO;
-import com.laptrinhjavaweb.service.IMix;
-import com.laptrinhjavaweb.service.IUser;
+import com.springmvcproject.dto.MixDTO;
+import com.springmvcproject.service.IMix;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;

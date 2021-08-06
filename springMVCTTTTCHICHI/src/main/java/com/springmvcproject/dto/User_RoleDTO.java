@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.dto;
+package com.springmvcproject.dto;
 public class User_RoleDTO extends AbstractDTO<User_RoleDTO> {
 
     private Long usersid;

@@ -1,7 +1,7 @@
-package com.laptrinhjavaweb.api.admin;
+package com.springmvcproject.api.admin;
 
-import com.laptrinhjavaweb.dto.SurveyFormDTO;
-import com.laptrinhjavaweb.service.ISurveyForm;
+import com.springmvcproject.dto.SurveyFormDTO;
+import com.springmvcproject.service.ISurveyForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

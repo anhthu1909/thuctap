@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.constant;
+package com.springmvcproject.constant;
 
 public class SystemConstant {
 

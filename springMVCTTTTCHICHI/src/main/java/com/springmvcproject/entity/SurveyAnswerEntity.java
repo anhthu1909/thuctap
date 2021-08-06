@@ -1,4 +1,4 @@
-package com.laptrinhjavaweb.entity;
+package com.springmvcproject.entity;
 
 import javax.persistence.*;
 @Entity
@@ -10,7 +10,7 @@ public class SurveyAnswerEntity extends BaseEntity {
     @Column(name="id")
     private Long id;
 
-    @Column(name="content")
+    @Column(name="content", columnDefinition = "Clob")
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)

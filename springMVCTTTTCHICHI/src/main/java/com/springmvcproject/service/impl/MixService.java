@@ -1,14 +1,14 @@
-package com.laptrinhjavaweb.service.impl;
+package com.springmvcproject.service.impl;
 
-import com.laptrinhjavaweb.converter.MixConventer;
-import com.laptrinhjavaweb.dto.MixDTO;
-import com.laptrinhjavaweb.entity.MixEntity;
-import com.laptrinhjavaweb.entity.RoleEntity;
-import com.laptrinhjavaweb.entity.UserEntity;
-import com.laptrinhjavaweb.repository.MixRepository;
-import com.laptrinhjavaweb.repository.RoleRepository;
-import com.laptrinhjavaweb.repository.UserRepository;
-import com.laptrinhjavaweb.service.IMix;
+import com.springmvcproject.converter.MixConventer;
+import com.springmvcproject.dto.MixDTO;
+import com.springmvcproject.entity.MixEntity;
+import com.springmvcproject.entity.RoleEntity;
+import com.springmvcproject.entity.UserEntity;
+import com.springmvcproject.repository.MixRepository;
+import com.springmvcproject.repository.RoleRepository;
+import com.springmvcproject.repository.UserRepository;
+import com.springmvcproject.service.IMix;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

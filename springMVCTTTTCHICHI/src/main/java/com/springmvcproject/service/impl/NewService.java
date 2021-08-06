@@ -1,11 +1,11 @@
-package com.laptrinhjavaweb.service.impl;
+package com.springmvcproject.service.impl;
 
 
-import com.laptrinhjavaweb.converter.NewConverter;
-import com.laptrinhjavaweb.dto.NewDTO;
-import com.laptrinhjavaweb.entity.NewEntity;
-import com.laptrinhjavaweb.repository.NewRepository;
-import com.laptrinhjavaweb.service.INew;
+import com.springmvcproject.converter.NewConverter;
+import com.springmvcproject.dto.NewDTO;
+import com.springmvcproject.entity.NewEntity;
+import com.springmvcproject.repository.NewRepository;
+import com.springmvcproject.service.INew;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

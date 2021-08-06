@@ -1,7 +1,7 @@
-package com.laptrinhjavaweb.converter;
+package com.springmvcproject.converter;
 
-import com.laptrinhjavaweb.dto.MixDTO;
-import com.laptrinhjavaweb.entity.MixEntity;
+import com.springmvcproject.dto.MixDTO;
+import com.springmvcproject.entity.MixEntity;
 import org.springframework.stereotype.Component;
 
 @Component

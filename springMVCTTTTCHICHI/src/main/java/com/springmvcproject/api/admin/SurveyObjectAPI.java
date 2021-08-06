@@ -1,7 +1,7 @@
-package com.laptrinhjavaweb.api.admin;
+package com.springmvcproject.api.admin;
 
-import com.laptrinhjavaweb.dto.SurveyObjectDTO;
-import com.laptrinhjavaweb.service.ISurveyObject;
+import com.springmvcproject.dto.SurveyObjectDTO;
+import com.springmvcproject.service.ISurveyObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;

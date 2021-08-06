@@ -1,12 +1,9 @@
-package com.laptrinhjavaweb.entity;
+package com.springmvcproject.entity;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import org.springframework.data.annotation.CreatedBy;

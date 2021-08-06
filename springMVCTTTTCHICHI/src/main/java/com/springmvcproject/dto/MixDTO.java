@@ -1,6 +1,4 @@
-package com.laptrinhjavaweb.dto;
-
-import javax.persistence.Column;
+package com.springmvcproject.dto;
 
 public class MixDTO extends AbstractDTO<MixDTO> {
 
