@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController(value = "userAPIOfAdmin")
 public class UserAPI {
     @Autowired
-    private IUser newService;
+    private IUser user;
     @PostMapping("/api/user")
     public UserDTO createNew(@RequestBody UserDTO createNew) {
-        return newService.save(createNew);
+        return user.save(createNew);
     }
 
     @PutMapping("/api/user")
     public UserDTO updateNew(@RequestBody UserDTO updateNew) {
-        return newService.save(updateNew);
+        return user.save(updateNew);
     }
 
     @DeleteMapping("/api/user")
     public void deleteNew(@RequestBody long[] ids) {
-        newService.delete(ids);
+        user.delete(ids);
     }
 }
