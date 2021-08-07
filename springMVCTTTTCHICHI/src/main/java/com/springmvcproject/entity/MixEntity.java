@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="mix")
 public class MixEntity extends BaseEntity {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mix_gen")

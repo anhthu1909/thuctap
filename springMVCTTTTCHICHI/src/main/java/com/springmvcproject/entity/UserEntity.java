@@ -96,4 +96,5 @@ public class UserEntity extends BaseEntity {
     public void setAnswers(List<SurveyAnswerEntity> answers) {
         this.answers = answers;
     }
+
 }

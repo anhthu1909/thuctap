@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController(value = "surveyFormAPIOfAdmin")
 public class SurveyFormAPI {
+
     @Autowired
     private ISurveyForm surveyForm;
+
     @PostMapping("/api/phieuks")
     public SurveyFormDTO createNew(@RequestBody SurveyFormDTO createNew) {
         return surveyForm.save(createNew);

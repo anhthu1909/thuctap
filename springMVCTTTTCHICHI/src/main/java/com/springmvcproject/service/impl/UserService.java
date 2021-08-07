@@ -7,13 +7,13 @@ import com.springmvcproject.repository.UserRepository;
 import com.springmvcproject.service.IUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class UserService implements IUser {
+
     @Autowired
     private UserRepository userRepository;
 
@@ -30,15 +30,7 @@ public class UserService implements IUser {
         }
         return models;
     }
-   /* @Override
-    public Map<String, String> findAll() {
-        Map<String, String> result = new HashMap<>();
-        List<UserEntity> entities = newRepository.findAll();
-        for (UserEntity item: entities) {
-            result.put(item.getFullname(), item.getName());
-        }
-        return result;
-    }*/
+
     @Override
     public UserDTO findById(long id){
         UserEntity entity=userRepository.findOne(id);

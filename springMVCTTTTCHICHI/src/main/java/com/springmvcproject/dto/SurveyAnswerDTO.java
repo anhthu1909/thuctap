@@ -2,7 +2,6 @@ package com.springmvcproject.dto;
 
 public class SurveyAnswerDTO extends AbstractDTO<SurveyAnswerDTO> {
 
-
     private Long surveyFormId;
     private Long usresId;
     private String usresFullname;

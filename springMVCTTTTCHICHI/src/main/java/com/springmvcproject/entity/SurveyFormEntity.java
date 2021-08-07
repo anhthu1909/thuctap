@@ -7,6 +7,7 @@ import java.util.List;
 @Entity
 @Table(name="surveyform")
 public class SurveyFormEntity extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "surveyform_gen")
     @SequenceGenerator(name = "surveyform_gen", sequenceName = "surveyform_seq", allocationSize = 1)
@@ -38,4 +39,5 @@ public class SurveyFormEntity extends BaseEntity {
     public void setAnswers(List<SurveyAnswerEntity> answers) {
         this.answers = answers;
     }
+
 }

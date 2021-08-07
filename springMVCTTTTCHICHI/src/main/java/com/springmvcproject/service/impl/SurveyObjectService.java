@@ -14,10 +14,13 @@ import java.util.List;
 
 @Service
 public class SurveyObjectService implements ISurveyObject {
+
     @Autowired
     private SurveyObjectRepository surveyObjectRepository;
+
     @Autowired
     private SurveyObjectConverter surveyObjectConverter;
+
     @Override
     public List<SurveyObjectDTO> findAll(){
         List<SurveyObjectDTO> models= new ArrayList<>();
@@ -25,11 +28,8 @@ public class SurveyObjectService implements ISurveyObject {
         for(SurveyObjectEntity item: entities){
             SurveyObjectDTO surveyObjectDTO= surveyObjectConverter.toDto(item);
             models.add(surveyObjectDTO);
-
         }
         return models;
-
-
     }
     @Override
     public SurveyObjectDTO findById(long id){
@@ -37,6 +37,7 @@ public class SurveyObjectService implements ISurveyObject {
         return surveyObjectConverter.toDto(entity);
 
     }
+
     @Override
     @Transactional
     public SurveyObjectDTO save(SurveyObjectDTO dto) {
@@ -50,7 +51,6 @@ public class SurveyObjectService implements ISurveyObject {
         }
         return surveyObjectConverter.toDto(surveyObjectRepository.save(surveyObjectEntity));
     }
-
 
     @Override
     @Transactional

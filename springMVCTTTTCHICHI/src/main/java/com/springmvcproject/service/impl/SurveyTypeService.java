@@ -49,7 +49,6 @@ public class SurveyTypeService implements ISurveyType {
         return surveyTypeConverter.toDto(surveyTypeRepository.save(surveyTypeEntity));
     }
 
-
     @Override
     @Transactional
     public void delete(long[] ids) {

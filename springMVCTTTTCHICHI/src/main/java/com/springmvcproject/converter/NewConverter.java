@@ -16,14 +16,16 @@ public class NewConverter {
         result.setThumbnail(entity.getThumbnail());
         return result;
     }
-        public NewEntity toEntity(NewDTO dto) {
-            NewEntity result = new NewEntity();
-            result.setTitle(dto.getTitle());
-            result.setShortdescription(dto.getShortDescription());
-            result.setContent(dto.getContent());
-            result.setThumbnail(dto.getThumbnail());
-            return result;
-        }
+
+    public NewEntity toEntity(NewDTO dto) {
+        NewEntity result = new NewEntity();
+        result.setTitle(dto.getTitle());
+        result.setShortdescription(dto.getShortDescription());
+        result.setContent(dto.getContent());
+        result.setThumbnail(dto.getThumbnail());
+        return result;
+    }
+
     public NewEntity toEntity(NewEntity result, NewDTO dto) {
         result.setTitle(dto.getTitle());
         result.setShortdescription(dto.getShortDescription());

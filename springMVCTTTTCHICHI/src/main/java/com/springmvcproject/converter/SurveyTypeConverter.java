@@ -12,12 +12,14 @@ public class SurveyTypeConverter {
         result.setName(entity.getName());
         return result;
     }
+
     public SurveyTypeEntity toEntity (SurveyTypeDTO dto){
 
         SurveyTypeEntity result=new SurveyTypeEntity();
         result.setName(dto.getName());
         return result;
     }
+
     public SurveyTypeEntity toEntity(SurveyTypeEntity result, SurveyTypeDTO dto) {
         result.setName(dto.getName());
         return result;

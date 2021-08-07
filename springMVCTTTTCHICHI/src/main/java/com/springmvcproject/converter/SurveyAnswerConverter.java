@@ -25,8 +25,4 @@ public class SurveyAnswerConverter {
         result.setContent(dto.getContent());
         return result;
     }
-
-
-
-
 }

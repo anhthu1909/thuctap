@@ -1,7 +1,8 @@
 package com.springmvcproject.controller.admin;
 
-import com.springmvcproject.dto.*;
-import com.springmvcproject.service.*;
+import com.springmvcproject.dto.SurveyAnswerDTO;
+import com.springmvcproject.service.ISurveyAnswer;
+import com.springmvcproject.service.ISurveyForm;
 import com.springmvcproject.until.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,16 +14,18 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-
 @Controller(value="surveyAnswerControllerOfadmin")
 
 public class SurveyAnswerController {
     @Autowired
     private ISurveyAnswer newService;
+
     @Autowired
     private ISurveyForm surveyForm;
+
     @Autowired
     private MessageUtil messageUtil;
+
     @RequestMapping(value = "/quan-tri/bai-viet/danh-sach-answer", method = RequestMethod.GET)
     public ModelAndView showList( HttpServletRequest request) {
 
@@ -36,7 +39,6 @@ public class SurveyAnswerController {
         }
         mav.addObject("model", model);
         return mav;
-
     }
 
     @RequestMapping(value = "/quan-tri/bai-viet/chinh-sua-answer", method = RequestMethod.GET)
@@ -51,11 +53,7 @@ public class SurveyAnswerController {
             mav.addObject("message", message.get("message"));
             mav.addObject("alert", message.get("alert"));
         }
-        //mav.addObject("categories", categoryService.findAll());
-
         mav.addObject("model", model);
         return mav;
     }
-
-
 }

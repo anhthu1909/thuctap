@@ -16,6 +16,7 @@ public class UserConverter {
         result.setName(entity.getName());
         return result;
     }
+
     public UserEntity toEntity(UserDTO dto)
     {
         UserEntity result=new UserEntity();
@@ -25,6 +26,7 @@ public class UserConverter {
         result.setName(dto.getName());
         return result;
     }
+
     public UserEntity toEntity(UserEntity result, UserDTO dto)
     {
         result.setFullname(dto.getFullname());

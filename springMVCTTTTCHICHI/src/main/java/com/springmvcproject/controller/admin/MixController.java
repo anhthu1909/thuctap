@@ -1,7 +1,9 @@
 package com.springmvcproject.controller.admin;
 
-import com.springmvcproject.dto.*;
-import com.springmvcproject.service.*;
+import com.springmvcproject.dto.MixDTO;
+import com.springmvcproject.service.IMix;
+import com.springmvcproject.service.IRole;
+import com.springmvcproject.service.IUser;
 import com.springmvcproject.until.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,24 +15,26 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-
 @Controller(value="mixControllerOfadmin")
 
 public class MixController {
 
     @Autowired
     private IMix mixService;
+
     @Autowired
     private IRole roleService;
+
     @Autowired
     private IUser userService;
+
     @Autowired
     private MessageUtil messageUtil;
 
     @RequestMapping(value = "/quan-tri/bai-viet/danh-sach-mix", method = RequestMethod.GET)
     public ModelAndView showList(HttpServletRequest request) {
         //@ModelAttribute("model") NewDTO model
-       MixDTO model = new MixDTO();
+        MixDTO model = new MixDTO();
         ModelAndView mav = new ModelAndView("admin/mix/list");
         model.setListResult(mixService.findAll());
         if (request.getParameter("message") != null) {

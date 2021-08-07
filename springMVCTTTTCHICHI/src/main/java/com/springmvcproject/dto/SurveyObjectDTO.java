@@ -1,6 +1,7 @@
 package com.springmvcproject.dto;
 
 public class SurveyObjectDTO extends AbstractDTO<SurveyObjectDTO>{
+
     private String name;
 
     public String getName() {

@@ -16,6 +16,7 @@ import java.util.Map;
 
 @Controller(value="surveyFormControllerOfadmin")
 public class SurveyFormController {
+
     @Autowired
     private ISurveyForm surveyForm;
 
@@ -24,6 +25,7 @@ public class SurveyFormController {
 
     @Autowired
     private MessageUtil messageUtil;
+
     @RequestMapping(value = "/quan-tri/bai-viet/danh-sach-pks", method = RequestMethod.GET)
     public ModelAndView showList(HttpServletRequest request) {
         //@ModelAttribute("model") NewDTO model
@@ -37,7 +39,6 @@ public class SurveyFormController {
         }
         mav.addObject("model", model);
         return mav;
-
     }
     @RequestMapping(value = "/quan-tri/bai-viet/chinh-sua-pksmoi", method = RequestMethod.GET)
     public ModelAndView addList(HttpServletRequest request) {
@@ -47,7 +48,6 @@ public class SurveyFormController {
         model.setListResult(surveyForm.findAll());
         mav.addObject("model", model);
         return mav;
-
     }
     @RequestMapping(value = "/quan-tri/bai-viet/meo", method = RequestMethod.POST)
     public ModelAndView add() {
@@ -55,7 +55,6 @@ public class SurveyFormController {
         ModelAndView mav = new ModelAndView("admin/new/meo");
         mav.addObject("model", model);
         return mav;
-
     }
     @RequestMapping(value = "/quan-tri/bai-viet/insert", method = RequestMethod.POST)
     public ModelAndView insert() {
@@ -63,7 +62,6 @@ public class SurveyFormController {
         ModelAndView mav = new ModelAndView("admin/surveyForm/insert");
         mav.addObject("model", model);
         return mav;
-
     }
     @RequestMapping(value = "/quan-tri/bai-viet/chinh-sua-pks", method = RequestMethod.GET)
     public ModelAndView editNew(@RequestParam(value = "id", required = false) Long id, HttpServletRequest request ) {
@@ -81,6 +79,5 @@ public class SurveyFormController {
         mav.addObject("model", model);
         return mav;
     }
-
 }
 

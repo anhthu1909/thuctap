@@ -13,13 +13,13 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-
-@Controller(value="surveyObjectControllerOfadmin")
+@Controller(value="surveyObjectControllerOfdmin")
 
 public class SurveyObjectController {
 
     @Autowired
     private ISurveyObject surveyObject;
+
     @Autowired
     private MessageUtil messageUtil;
 
@@ -36,7 +36,6 @@ public class SurveyObjectController {
         }
         mav.addObject("model", model);
         return mav;
-
     }
 
     @RequestMapping(value = "/quan-tri/bai-viet/cs-doi-tuong", method = RequestMethod.GET)
@@ -51,10 +50,7 @@ public class SurveyObjectController {
             mav.addObject("message", message.get("message"));
             mav.addObject("alert", message.get("alert"));
         }
-
         mav.addObject("model", model);
         return mav;
     }
-
-
-    }
+}

@@ -17,10 +17,13 @@ import java.util.Map;
 @Controller(value="roleControllerOfadmin")
 
 public class RoleController {
+
     @Autowired
     private IRole newService;
+
     @Autowired
     private MessageUtil messageUtil;
+
     @RequestMapping(value = "/quan-tri/bai-viet/danh-sach-role", method = RequestMethod.GET)
     public ModelAndView showList( HttpServletRequest request) {
 
@@ -34,7 +37,6 @@ public class RoleController {
         }
         mav.addObject("model", model);
         return mav;
-
     }
 
     @RequestMapping(value = "/quan-tri/bai-viet/chinh-sua-role", method = RequestMethod.GET)
@@ -49,10 +51,7 @@ public class RoleController {
             mav.addObject("message", message.get("message"));
             mav.addObject("alert", message.get("alert"));
         }
-        //mav.addObject("categories", categoryService.findAll());
         mav.addObject("model", model);
         return mav;
     }
-
-
 }

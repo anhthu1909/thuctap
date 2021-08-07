@@ -22,5 +22,4 @@ public class MyUser extends User {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-
 }

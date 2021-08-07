@@ -3,28 +3,26 @@ package com.springmvcproject.api.admin;
 import com.springmvcproject.dto.RoleDTO;
 import com.springmvcproject.service.IRole;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController(value = "roleAPIOfAdmin")
 public class RoleAPI {
+
     @Autowired
-    private IRole newService;
+    private IRole role;
+
     @PostMapping("/api/role")
     public RoleDTO createNew(@RequestBody RoleDTO createNew) {
-        return newService.save(createNew);
+        return role.save(createNew);
     }
 
     @PutMapping("/api/role")
     public RoleDTO updateNew(@RequestBody RoleDTO updateNew) {
-        return newService.save(updateNew);
+        return role.save(updateNew);
     }
 
     @DeleteMapping("/api/role")
     public void deleteNew(@RequestBody long[] ids) {
-        newService.delete(ids);
+        role.delete(ids);
     }
 }

@@ -4,14 +4,10 @@
         <class>com.springmvcproject.entity.NewEntity</class>
         <class>com.springmvcproject.entity.RoleEntity</class>
         <class>com.springmvcproject.entity.UserEntity</class>
-        <class>com.springmvcproject.entity.BaiVietEntity</class>
-        <class>com.springmvcproject.entity.BenhVienEntity</class>
         <class>com.springmvcproject.entity.SurveyObjectEntity</class>
         <class>com.springmvcproject.entity.SurveyTypeEntity</class>
         <class>com.springmvcproject.entity.CategoryEntity</class>
-        <class>com.springmvcproject.entity.NguoiDungEntity</class>
         <class>com.springmvcproject.entity.SurveyFormEntity</class>
-        <class>com.springmvcproject.entity.QuyenEntity</class>
         <class>com.springmvcproject.entity.SurveyAnswerEntity</class>
     </persistence-unit>
 </persistence>

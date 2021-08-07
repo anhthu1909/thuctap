@@ -17,8 +17,10 @@ import java.util.Map;
 @Controller(value="surveyTypeControllerOfadmin")
 
 public class SurveyTypeController {
+
     @Autowired
-  private ISurveyType surveyType;
+    private ISurveyType surveyType;
+
     @Autowired
     private MessageUtil messageUtil;
 
@@ -27,15 +29,14 @@ public class SurveyTypeController {
                             //@ModelAttribute("model") NewDTO model
         SurveyTypeDTO model=new SurveyTypeDTO();
         ModelAndView mav = new ModelAndView("admin/surveyType/list");
-       model.setListResult(surveyType.findAll());
+        model.setListResult(surveyType.findAll());
         if (request.getParameter("message") != null) {
             Map<String, String> message = messageUtil.getMessage(request.getParameter("message"));
             mav.addObject("message", message.get("message"));
             mav.addObject("alert", message.get("alert"));
         }
-      mav.addObject("model", model);
+        mav.addObject("model", model);
         return mav;
-
     }
    @RequestMapping(value = "/quan-tri/bai-viet/chinh-sua-kieu", method = RequestMethod.GET)
    public ModelAndView editNew(@RequestParam(value = "id", required = false) Long id, HttpServletRequest request) {
@@ -44,15 +45,12 @@ public class SurveyTypeController {
        if (id != null) {
            model = surveyType.findById(id);
        }
-      if (request.getParameter("message") != null) {
+       if (request.getParameter("message") != null) {
            Map<String, String> message = messageUtil.getMessage(request.getParameter("message"));
            mav.addObject("message", message.get("message"));
            mav.addObject("alert", message.get("alert"));
        }
-       //mav.addObject("categories", categoryService.findAll());
        mav.addObject("model", model);
        return mav;
    }
-
-
 }

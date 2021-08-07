@@ -1,6 +1,7 @@
 package com.springmvcproject.dto;
 
 public class UserDTO extends AbstractDTO<UserDTO>{
+
     private String name;
     private String password;
     private String fullname;

@@ -1,6 +1,5 @@
 package com.springmvcproject.service.impl;
 
-
 import com.springmvcproject.converter.RoleConverter;
 import com.springmvcproject.dto.RoleDTO;
 import com.springmvcproject.entity.RoleEntity;
@@ -13,9 +12,9 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public  class RoleService implements IRole {
+
     @Autowired
     private RoleRepository roleRepository;
 
@@ -52,7 +51,6 @@ public  class RoleService implements IRole {
         }
         return roleConverter.toDto(roleRepository.save(roleEntity));
     }
-
 
     @Override
     @Transactional

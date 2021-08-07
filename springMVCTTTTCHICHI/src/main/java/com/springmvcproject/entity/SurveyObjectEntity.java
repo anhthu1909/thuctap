@@ -4,6 +4,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="surveyobject")
 public class SurveyObjectEntity extends BaseEntity {
+
     @Id
     @Column(name= "id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "surveyobject_gen")
@@ -24,4 +25,5 @@ public class SurveyObjectEntity extends BaseEntity {
     public void setName(String name) {
         this.name = name;
     }
+
 }

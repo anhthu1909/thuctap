@@ -19,6 +19,7 @@ public class SurveyObjectConverter {
         result.setName(dto.getName());
         return result;
     }
+
     public SurveyObjectEntity toEntity(SurveyObjectEntity result, SurveyObjectDTO dto) {
         result.setName(dto.getName());
         return result;

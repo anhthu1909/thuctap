@@ -9,5 +9,4 @@ public interface IUser  {
        UserDTO findById(long id);
        UserDTO save(UserDTO dto);
        void delete(long[] ids);
-
 }

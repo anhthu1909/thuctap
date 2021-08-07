@@ -13,14 +13,13 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-
 @Controller(value="userControllerOfadmin")
 
 public class UserController {
 
-
     @Autowired
     private IUser user;
+
     @Autowired
     private MessageUtil messageUtil;
 
@@ -37,7 +36,6 @@ public class UserController {
         }
         mav.addObject("model", model);
         return mav;
-
     }
 
     @RequestMapping(value = "/quan-tri/bai-viet/chinh-sua-user", method = RequestMethod.GET)
@@ -55,6 +53,4 @@ public class UserController {
         mav.addObject("model", model);
         return mav;
     }
-
-
 }

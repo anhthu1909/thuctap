@@ -4,6 +4,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="surveyanswer")
 public class SurveyAnswerEntity extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "surveyanswer_gen")
     @SequenceGenerator(name = "surveyanswer_gen", sequenceName = "surveyanswer_seq", allocationSize = 1)
@@ -48,4 +49,5 @@ public class SurveyAnswerEntity extends BaseEntity {
     public void setSurveyform(SurveyFormEntity surveyform) {
         this.surveyform = surveyform;
     }
+
 }

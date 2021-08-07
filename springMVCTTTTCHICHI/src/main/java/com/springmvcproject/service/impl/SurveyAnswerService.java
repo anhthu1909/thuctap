@@ -1,6 +1,5 @@
 package com.springmvcproject.service.impl;
 
-
 import com.springmvcproject.converter.SurveyAnswerConverter;
 import com.springmvcproject.dto.SurveyAnswerDTO;
 import com.springmvcproject.entity.SurveyAnswerEntity;
@@ -17,15 +16,18 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public  class SurveyAnswerService implements ISurveyAnswer {
+
     @Autowired
     private SurveyAnswerRepository surveyAnswerRepository;
+
     @Autowired
     private SurveyFormRepository surveyFormRepository;
+
     @Autowired
     private UserRepository userRepository;
+
     @Autowired
     private SurveyAnswerConverter surveyAnswerConverter;
 
@@ -60,11 +62,9 @@ public  class SurveyAnswerService implements ISurveyAnswer {
             surveyAnswerEntity = surveyAnswerConverter.toEntity(dto);
             surveyAnswerEntity.setSurveyform(surveyFormEntity);
             surveyAnswerEntity.setUsers(userEntity);
-
         }
         return surveyAnswerConverter.toDto(surveyAnswerRepository.save(surveyAnswerEntity));
     }
-
 
     @Override
     @Transactional

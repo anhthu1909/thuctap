@@ -3,16 +3,14 @@ package com.springmvcproject.api.admin;
 import com.springmvcproject.dto.SurveyObjectDTO;
 import com.springmvcproject.service.ISurveyObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController(value = "surveyObjectAPIOfAdmin")
 public class SurveyObjectAPI {
+
     @Autowired
     private ISurveyObject surveyObject;
+
     @PostMapping("/api/doituong")
     public SurveyObjectDTO createNew(@RequestBody SurveyObjectDTO createNew) {
         return surveyObject.save(createNew);

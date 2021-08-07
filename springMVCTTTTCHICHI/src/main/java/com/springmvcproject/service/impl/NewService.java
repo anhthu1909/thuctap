@@ -1,6 +1,5 @@
 package com.springmvcproject.service.impl;
 
-
 import com.springmvcproject.converter.NewConverter;
 import com.springmvcproject.dto.NewDTO;
 import com.springmvcproject.entity.NewEntity;
@@ -13,11 +12,12 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public  class NewService implements INew {
+
 	@Autowired
     private NewRepository newRepository;
+
 	@Autowired
 	private NewConverter newConverter;
 
@@ -52,7 +52,6 @@ public  class NewService implements INew {
 		}
 		return newConverter.toDto(newRepository.save(newEntity));
 	}
-
 
     @Override
     @Transactional
