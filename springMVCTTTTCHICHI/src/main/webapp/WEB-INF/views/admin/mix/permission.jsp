@@ -17,9 +17,7 @@
 <%
     request.setCharacterEncoding("UTF-8");
     String doituong1=request.getParameter("taikhoan");
-     String name=request.getParameter("quyen");
-    //String age =request.getParameter("tuoi");
-    //out.println(doituong1 + name + age);
+    String name=request.getParameter("quyen");
 
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -27,8 +25,6 @@
         PreparedStatement ps = conn.prepareStatement("insert into USERS_ROLES(USERSID, ROLESID) values (?,?) ");
         ps.setString(1,doituong1);
         ps.setString(2,name);
-        // ps.setString(2,name);
-        //ps.setString(3,age);
         int x = ps.executeUpdate();
         if(x!=0){
             out.print("Đã lưu thành công ");
@@ -37,13 +33,10 @@
         else{
             out.print("Lỗi hệ thống");
         }
-
     }
     catch(Exception e){
         out.print(e);
-
     }
-
 %>
 
 </body>

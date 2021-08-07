@@ -39,17 +39,17 @@
 									<div class="dt-buttons btn-overlap btn-group">
 										<c:url var="createNewURL" value="/quan-tri/bai-viet/chinh-sua-pksmoi"/>
 										<a flag="info"
-										   class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" data-toggle="tooltip"
-										   title='Thêm phiếu khảo sát' href='${createNewURL}'>
-															<span>
-																<i class="fa fa-plus-circle bigger-110 purple"></i>
-															</span>
+									    	class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" data-toggle="tooltip"
+									    	title='Thêm phiếu khảo sát' href='${createNewURL}'>
+											<span>
+												<i class="fa fa-plus-circle bigger-110 purple"></i>
+											</span>
 										</a>
 										<button id="btnDelete" type="button" onclick="warningBeforeDelete()"
-												class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa bài viết'>
-																<span>
-																	<i class="fa fa-trash-o bigger-110 pink"></i>
-																</span>
+											class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa bài viết'>
+												<span>
+													<i class="fa fa-trash-o bigger-110 pink"></i>
+												</span>
 										</button>
 									</div>
 								</div>
@@ -65,7 +65,6 @@
 											<th>
 												Mã phiếu khảo sát
 											</th>
-
 											<th>Xem chi tiết </th>
 										</tr>
 										</thead>

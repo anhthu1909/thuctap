@@ -54,12 +54,10 @@
 
                             <div class="col-sm-9">
                                 <tr>
-
                                     <td>${model.content}</td>
                                 </tr>
                             </div>
                         </div>
-
 
                         <form:hidden path="id" id="newId"/>
                         <!--<div class="clearfix form-actions">
@@ -76,13 +74,11 @@
                                        Thêm câu trả
                                     </button>
                                 </c:if>
-
                                 &nbsp; &nbsp; &nbsp;
                                 <button class="btn" type="reset">
                                     <i class="ace-icon fa fa-undo bigger-110"></i>
                                     Hủy
                                 </button>
-
                             </div>
                         </div>-->
                     </form:form>
@@ -121,7 +117,6 @@
                 if(tam==undefined || tam==""){
                     tam="Không có câu trả lời";
                 }
-lời
                 cauhoi.push(a);
                 cautraloi.push(tam);
             }
@@ -133,16 +128,12 @@ lời
                 t1='<div class="col-md-8 mt-2" id="row'+t+'"> <label class="nhan">'+cauhoi[t]+'</label><br><label class="cautraloi">'+'Đáp án: '+cautraloi[t]+'</label></div>';
                 final.push(t1);
             }
-
             code=code2+final.join(" ");
 
             $('#ketqua').val(code);
             // gắn url dưới đây sau khi đánh giá thành công
-
         });
-
     });
-
 
     $('#btnAddOrUpdateNew').click(function (e) {
         e.preventDefault();

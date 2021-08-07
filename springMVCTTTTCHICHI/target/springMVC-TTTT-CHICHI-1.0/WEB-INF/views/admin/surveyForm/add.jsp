@@ -77,23 +77,19 @@
                     </form>
                     <form action="#" id="pks" >
 
-
                     </form>
                     <!--xử lý lưu dữ liệu bàng form dưới đây-->
                     <form action="meo" method="post" >
                         <textarea id="final" name="final" rows="2" cols="50" style="opacity: 0;"></textarea>
 
                         <input type="submit" class="btn btn-primary float-right" value="Lưu phiếu khảo sát" id="savecode">
-
                     </form>
-
                 </div>
-
             </div>
         </div>
     </div>
-    <div>
 
+    <div>
     </div>
 
     <!--Phần dành cho popup-->
@@ -121,11 +117,11 @@
                         <label for="doan">Đoạn</label>
                     </div>
                     <label class="mt-3 pb-3" style="font-size: 28px; font-weight:500;">Kiểu câu trả lời</label>
+
                     <div id="sua3" class="mt-3">
-
                     </div>
-                    <div id="sua4">
 
+                    <div id="sua4">
                     </div>
 
                 </div>
@@ -141,7 +137,6 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="border: none;">
-
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -152,11 +147,9 @@
                             Xóa thành công
                         </label>
                     </div>
-
                 </div>
                 <div class="modal-footer" style="border: none;">
                     <button type="button" class="btn btn-secondary" id="dong_form" data-dismiss="modal">Đóng</button>
-
                 </div>
             </div>
         </div>

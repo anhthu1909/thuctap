@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@include file="/common/taglib.jsp"%>
 <c:url var="userURL" value="/quan-tri/bai-viet/danh-sach-user"/>
@@ -20,9 +19,7 @@
             </script>
 
             <ul class="breadcrumb">
-                <li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Home</a>
-                </li>
-
+                <li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Home</a></li>
                 <li><a href="#">Forms</a></li>
                 <li class="active">Form Elements</li>
             </ul>
@@ -62,7 +59,6 @@
                                 <form:input path="status" cssClass="col-xs-10 col-sm-5"/>
                             </div>
                         </div>
-
                         <form:hidden path="id" id="userId"/>
                         <div class="clearfix form-actions">
                             <div class="col-md-offset-3 col-md-9">

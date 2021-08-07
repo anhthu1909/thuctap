@@ -17,8 +17,6 @@
 <%
     request.setCharacterEncoding("UTF-8");
     String doituong1=request.getParameter("final");
-    //String age =request.getParameter("tuoi");
-    //out.println(doituong1 + name + age);
 
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -29,18 +27,14 @@
         int x = ps.executeUpdate();
         if(x!=0){
            out.print("Đã lưu thành công ");
-
         }
         else{
             out.print("Lỗi hệ thống");
         }
-
     }
     catch(Exception e){
         out.print(e);
-
     }
-
 %>
 
 </body>

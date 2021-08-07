@@ -5,7 +5,6 @@
 <c:url var="kieuURL" value="/quan-tri/bai-viet/danh-sach-answer"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Danh sách phiếu khảo </title>
@@ -14,7 +13,6 @@
 <body>
 <div class="main-content">
 	<form action="<c:url value='/quan-tri/bai-viet/danh-sach-kieu'/>" id="formSubmit" method="get">
-
 		<div class="main-content-inner">
 			<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 				<ul class="breadcrumb">
@@ -39,17 +37,17 @@
 									<div class="dt-buttons btn-overlap btn-group">
 										<c:url var="createNewURL" value="/quan-tri/bai-viet/chinh-sua-answer"/>
 										<a flag="info"
-										   class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" data-toggle="tooltip"
-										   title='Thêm phiếu khảo sát' href='${createNewURL}'>
-															<span>
-																<i class="fa fa-plus-circle bigger-110 purple"></i>
-															</span>
+											class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" data-toggle="tooltip"
+											title='Thêm phiếu khảo sát' href='${createNewURL}'>
+											<span>
+												<i class="fa fa-plus-circle bigger-110 purple"></i>
+											</span>
 										</a>
 										<button id="btnDelete" type="button" onclick="warningBeforeDelete()"
-												class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa bài viết'>
-																<span>
-																	<i class="fa fa-trash-o bigger-110 pink"></i>
-																</span>
+											class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa bài viết'>
+												<span>
+													<i class="fa fa-trash-o bigger-110 pink"></i>
+												</span>
 										</button>
 									</div>
 								</div>
@@ -65,7 +63,6 @@
 											<th>
 												Mã câu trả lời
 											</th>
-
 											<th>Xem chi tiết </th>
 										</tr>
 										</thead>
@@ -73,9 +70,7 @@
 										<c:forEach var="item" items="${model.listResult}">
 											<tr>
 												<td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>
-
 												<td>${item.id}</td>
-
 												<td>
 													<c:url var="updateNewURL" value="/quan-tri/bai-viet/chinh-sua-answer">
 														<c:param name="id" value="${item.id}"/>

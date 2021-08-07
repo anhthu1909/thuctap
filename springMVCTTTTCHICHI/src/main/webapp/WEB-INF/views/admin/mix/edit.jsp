@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@include file="/common/taglib.jsp"%>
 <c:url var="newURL" value="/quan-tri/bai-viet/danh-sach-mix"/>
@@ -10,9 +9,7 @@
 </head>
 <body>
 <div class="main-content">
-
 <!--
-
     <form action="phanquyen" method="post">
 
         <div class="form-group">
@@ -28,24 +25,21 @@
             </div>
         </div>
 
-
         <div class="form-group">
             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Phân quyền</label>
             <div class="col-sm-9">
 
-                        <select name="quyen" id="quyen">
-                            <c:forEach var="item" items="${roles}" >
-                                <option value="${item.id}">${item.code}</option>
-                            </c:forEach>
-                        </select>
-
+                <select name="quyen" id="quyen">
+                    <c:forEach var="item" items="${roles}" >
+                        <option value="${item.id}">${item.code}</option>
+                    </c:forEach>
+                </select>
             </div>
         </div>
             <button type="submit"  class="btn btn-info" type="button" id="btnAddOrUpdateNew">
                 <i class="ace-icon fa fa-check bigger-110"></i>
                 Lưu
             </button>
-
     </form>
 
     -->

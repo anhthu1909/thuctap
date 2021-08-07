@@ -14,7 +14,6 @@
 <body>
 <div class="main-content">
 	<form action="<c:url value='/quan-tri/bai-viet/danh-sach-role'/>" id="formSubmit" method="get">
-
 		<div class="main-content-inner">
 			<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 				<ul class="breadcrumb">
@@ -41,15 +40,15 @@
 										<a flag="info"
 										   class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" data-toggle="tooltip"
 										   title='Thêm phân quyền' href='${createNewURL}'>
-															<span>
-																<i class="fa fa-plus-circle bigger-110 purple"></i>
-															</span>
+												<span>
+													<i class="fa fa-plus-circle bigger-110 purple"></i>
+												</span>
 										</a>
 										<button id="btnDelete" type="button" onclick="warningBeforeDelete()"
-												class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa bài viết'>
-																<span>
-																	<i class="fa fa-trash-o bigger-110 pink"></i>
-																</span>
+											class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa bài viết'>
+												<span>
+													<i class="fa fa-trash-o bigger-110 pink"></i>
+												</span>
 										</button>
 									</div>
 								</div>
@@ -62,7 +61,7 @@
 										<thead>
 										<tr>
 											<th><input type="checkbox" id="checkAll"></th>
-											<th>Mã code</th>
+											<th>Mã quyền</th>
 											<th>Tên phân quyền</th>
 											<th>Thao tác</th>
 										</tr>

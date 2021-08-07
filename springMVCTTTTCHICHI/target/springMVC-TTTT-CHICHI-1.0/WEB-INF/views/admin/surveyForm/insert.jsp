@@ -19,7 +19,6 @@
     String doituong1=request.getParameter("ketqua");
     String name = request.getParameter("mapks");
     String age = request.getParameter("user");
-    //out.println(doituong1 + name + age);
 
     try {
         Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -31,18 +30,14 @@
         int x = ps.executeUpdate();
         if(x!=0){
             out.print("Đã lưu thành công ");
-
         }
         else{
             out.print("Lỗi hệ thống");
         }
-
     }
     catch(Exception e){
         out.print(e);
-
     }
-
 %>
 
 </body>
